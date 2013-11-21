@@ -346,6 +346,7 @@ uint8_t xGet_String_Length(check)
 void vLCD_GO_TO_POSITION(uint8_t x, uint8_t y)
 {
 	//save the current position
+	register uint8_t DDRAMAddr;
 	
 	// For each line o the LCD
 	switch(y)
@@ -353,22 +354,27 @@ void vLCD_GO_TO_POSITION(uint8_t x, uint8_t y)
 		case 0: 
 			//for the top line, set the DDRAM address 
 			//move a certain number of characters to the right
+			DDRAMAddr = LCD_LINE0_DDRAMADDR + x;
 		break;
 		
 		case 1: 
 			//for the bottom line, set the DDRAM address 
 			//move a certain number of characters to the right
+			DDRAMAddr = LCD_LINE1_DDRAMADDR + x;
 		break;
 		
 		default: 
 			//default to the top left of the LCD if nothing is specified
+			DDRAMAddr = LCD_LINE0_DDRAMADDR+x;
 	}
 	
 	//save current cursor position X
+	CURSOR_X_POSITION = x;
 	//save current cursor position Y
+	CURSOR_Y_POSITION = y;
 	
 	// send a command to set the data address
-	
+	LCDsendCommand(1<<LCD_DDRAM | DDRAMAddr);
 }
 
 /*!****************************************************************************
@@ -396,6 +402,7 @@ void vLCD_GO_TO_POSITION(uint8_t x, uint8_t y)
 void vLCD_HOME_TOP_LINE(void)
 {
 	//move cursor to the top left position of the LCD
+	LCDsendCommand(1 << LCD_HOME);
 }
 
 /*!****************************************************************************
@@ -423,6 +430,7 @@ void vLCD_HOME_TOP_LINE(void)
 void vLCD_HOME_BOTTOM_LINE(void)
 {
 	//move the cursor to the bottom left position on the LCD
+	vLCD_GO_TO_POSITION(0,1);
 }
 
 /*****************************************************************************/

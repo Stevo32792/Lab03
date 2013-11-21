@@ -330,6 +330,8 @@ uint8_t xGet_String_Length(check)
  *
  *			Allows for direct control of where data can be written, rather
  *				than only from the beginning of a line
+ *
+ *			Saves current cursor position for text wrapping
  *			
  * \params[in] 	Character, Row 	
  *			
@@ -361,6 +363,9 @@ void vLCD_GO_TO_POSITION(uint8_t x, uint8_t y)
 		default: 
 			//default to the top left of the LCD if nothing is specified
 	}
+	
+	//save current cursor position X
+	//save current cursor position Y
 	
 	// send a command to set the data address
 	

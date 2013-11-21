@@ -39,9 +39,9 @@ uint8_t Top_Length;
 /*Library Home Function Variables*/
 /*********************************/
 
-/*! Variable to track the cursor character position/
+/*! Variable to track the cursor character position*/
 uint8_t CURSOR_X_POSITION;
-/*! Variable to track the line that the cursor is on/
+/*! Variable to track the line that the cursor is on*/
 uint8_t CURSOR_Y_POSITION;
 
 /*****************************************************************************/

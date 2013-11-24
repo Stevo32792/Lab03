@@ -278,7 +278,7 @@ void vLCD_CLEAR_BOTTOM(void)
  *
  ******************************************************************************
  */
-void xLCD_Get_Length(void)
+uint8_t xLCD_Get_Length(void)
 {
 	switch(LCD_Y_POSITION)//LCD_Y_POSITION AND LCD_X_POSITION ARE TEMPORARY VARIABLES UNTIL I CAN COMPARE WITH STEVEN'S CODE
 	{

@@ -117,8 +117,8 @@ void vLCD_WRITE_STRING(char *str_ptr)
 	while(*str_ptr != '\0')		//move through the string until the end is reached
 	{
 		/*! If text wrap is enabled */
-		#ifdef LCD_Text_Wrap
-			#if LCD_Text_Wrap == 1
+		#ifdef configTEXT_WRAP
+			#if configTEXT_WRAP == 1
 		
 				/*! If the LCD is at the end of the top line */
 				if( xLCD_Get_Length()== 24)

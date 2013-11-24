@@ -110,14 +110,16 @@ void vWRITE_COMMAND_TO_LCD(uint8_t RS, uint8_t data)
 */
 void vLCD_WRITE_STRING(char *str_ptr)
 {
-	PORTJ = 0x80;				//write data (RS pin 1; E pin 0; !write pin = 0)
+	
+	//Might not work, not sure how this #define magic works
+	LCP = LCD_RS;				//write data (RS pin 1; E pin 0; !write pin = 0)
 	
 	
 	while(*str_ptr != '\0')		//move through the string until the end is reached
 	{
 		/*! If text wrap is enabled */
-		#ifdef LCD_Text_Wrap
-			#if LCD_Text_Wrap == 1
+		#ifdef configTEXT_WRAP
+			#if configTEXT_WRAP == 1
 				
 				/*! If the LCD is at the end of the top line */
 				if( xLCD_Get_Length()== 24)
@@ -125,10 +127,10 @@ void vLCD_WRITE_STRING(char *str_ptr)
 					
 			#endif
 		#endif
-		PORTJ = PORTJ | 0x40;	//set enable high
+		LCP = LCP | LCD_E;	//set enable high
 		PORTK = *str_ptr++;	//write character to LCD
 		vTaskDelay(1);		//at least 30uS needed to display
-		PORTJ = PORTJ & 0x80;	//set enable low
+		LCP = LCP & LCD_E;	//set enable low
 		vTaskDelay(1);		//another 30uS delay needed
 	}		
 }

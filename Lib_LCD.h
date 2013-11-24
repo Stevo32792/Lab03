@@ -51,8 +51,11 @@ uint8_t CURSOR_Y_POSITION;
 /*Library Clear Function Variables*/
 /***********************************/
 
-/*! Variable to track the on/off status of the LCD 0-off 1-on*/
-uint8_t OnOffStatus;
+/*! 
+ * Variable to track the on/off status of the LCD 0-off 1-on
+ * \Note Zero is off
+ */
+uint8_t OnOffStatus = 0;
 
 /*****************************************************************************/
  
@@ -145,8 +148,11 @@ uint8_t OnOffStatus;
 #define LCD_ON_INSTRUCTION		0x08
 
 /*! Defines the cursor settings for the LCD */
-#define configCURSOR_SHOW		1
-#define configCURSOR_BLINK		1
+#define configCURSOR_SHOW			1
+#define configCURSOR_BLINK			1
+#define CURSOR_SHOW_INSTRUCTION		0x02
+#define CURSOR_BLINK_INSTRUCTION	0x01
+	
 
 /*****************************************************************************/
 
@@ -161,6 +167,8 @@ void vLCD_INITIALIZATION(void);
 void vWRITE_COMMAND_TO_LCD(uint8_t RS, uint8_t data);
 /*! Functions to write strings to an LCD */
 void vLCD_WRITE_STRING(char *str_ptr);
+/*! Toggles LCD Display on and off */
+void vLCD_ON_OFF(void);
 
 /*****************************************************************************/
  
@@ -203,8 +211,6 @@ void vLCD_CLEAR(void);
 void vLCD_CLEAR_TOP(void);
 /*! Function to clear the bottom row of the display */
 void vLCD_CLEAR_BOTTOM(void);
-/*! Toggles LCD Display on and off */
-void vLCD_ON_OFF(void);
 
 /*****************************************************************************/
  

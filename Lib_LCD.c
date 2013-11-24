@@ -137,13 +137,14 @@ void vLCD_WRITE_STRING(char *str_ptr)
 * Modification History:
 *
 * 11/17/2013 - Original Function
+* 11/24/2013 - Added code to function
 *
 ******************************************************************************
 */
 void vLCD_CLEAR(void)
 {
 	/*! Call write command to send 0x01 command (clear) to the controller */
-	/*! Delay 1.53 ms to allow for clear command to run */
+	vWRITE_COMMAND_TO_LCD(0, LCD_CLEAR_INSTRUCTION);
 }
 
 /*!****************************************************************************
@@ -163,14 +164,18 @@ void vLCD_CLEAR(void)
 * Modification History:
 *
 * 11/17/2013 - Original Function
+* 11/24/2013 - Added code to function
 *
 ******************************************************************************
 */
 void vLCD_CLEAR_TOP(void)
 {
 	/*! Call function to set cursor for top row's home position */
+	vLCD_HOME_TOP_LINE();
 	/*! Call function to write string of 24 spaces to clear the top row */
+	vLCD_WRITE_STRING("                        ");
 	/*! Call function to set cursor for top row's home position */
+	vLCD_HOME_TOP_LINE();
 }
 
 /*!****************************************************************************
@@ -190,14 +195,18 @@ void vLCD_CLEAR_TOP(void)
 * Modification History:
 *
 * 11/17/2013 - Original Function
+* 11/24/2013 - Added code to function
 *
 ******************************************************************************
 */
 void vLCD_CLEAR_BOTTOM(void)
 {
 	/*! Call function to set cursor for bottom row's home position */
+	vLCD_HOME_BOTTOM_LINE();
 	/*! Call function to write string of 24 spaces to clear the bottom row */
+	vLCD_WRITE_STRING("                        ");
 	/*! Call function to set cursor for bottom row's home position */
+	vLCD_HOME_BOTTOM_LINE();
 }
 
 /*!****************************************************************************
@@ -217,13 +226,44 @@ void vLCD_CLEAR_BOTTOM(void)
 * Modification History:
 *
 * 11/18/2013 - Original Function
+* 11/24/2013 - Added code to function
 *
 ******************************************************************************
 */
-void vLCD_CLEAR_BOTTOM(void)
+void vLCD_ON_OFF(void)
 {
-	/*! If statements to check status of LCD */
+	uint8_t LCD_Command = 0x00;
+	
+	/*! Check on/off status of LCD */
+	switch (OnOffStatus)
+	{
+		case 0:
+			/*! Set command to turn LCD on */
+			LCD_Command = LCD_ON_INSTRUCTION;
+		break;
+		
+		case 1:
+			/*! Set command to turn LCD off */
+			LCD_Command = LCD_OFF_INSTRUCTION;
+		break;
+	}
+	
+	/*! Check cursor show configuration */
+	if (configCURSOR_SHOW)
+	{
+		/*! Set command to show cursor if enabled */
+		LCD_Command += CURSOR_SHOW_INSTRUCTION;
+	}
+	
+	/*! Check cursor blink configuration */
+	if (configCURSOR_BLINK)
+	{
+		/*! Set command to blink cursor if enabled */
+		LCD_Command += CURSOR_BLINK_INSTRUCTION;
+	}
+	
 	/*! Toggle LCD */
+	vWRITE_COMMAND_TO_LCD(0, LCD_Command);
 }
 /*****************************************************************************/
 

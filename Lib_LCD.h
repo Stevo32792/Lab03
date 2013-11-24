@@ -173,12 +173,8 @@ void vLCD_HOME_BOTTOM_LINE(void);
 /*Library Length Function Prototypes*/
 /***********************************/
 
-/*! Function to track length of the top line of the LCD */
-void xGet_Top_Length(void);
-/*! Function to track length of the bottom line of the LCD */
-void xGet_Bottom_Length(void);
-/*! Function to get the length of a string passed into it*/
-uint8_t xGet_String_Length(string check);
+/*! Function to track remaining characters on the LCD */
+uint8_t xLCD_Get_Length()
 
 /*****************************************************************************/
 

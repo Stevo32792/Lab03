@@ -135,6 +135,8 @@ uint8_t OnOffStatus;
 /*! Defines the cursor settings for the LCD */
 #define configCURSOR_SHOW		1
 #define configCURSOR_BLINK		1
+/*! Text writing settings for the LCD */
+#define configTEXT_WRAP			1
 
 /*****************************************************************************/
 

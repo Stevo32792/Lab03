@@ -148,11 +148,18 @@ uint8_t OnOffStatus = 0;
 #define LCD_ON_INSTRUCTION		0x08
 
 /*! Defines the cursor settings for the LCD */
+<<<<<<< HEAD
 #define configCURSOR_SHOW			1
 #define configCURSOR_BLINK			1
 #define CURSOR_SHOW_INSTRUCTION		0x02
 #define CURSOR_BLINK_INSTRUCTION	0x01
 	
+=======
+#define configCURSOR_SHOW		1
+#define configCURSOR_BLINK		1
+/*! Defines the writing settings for the LCD */
+#define configTEXT_WRAP			1
+>>>>>>> 01b1202b6193f82b0deaf704996185eb2686cae9
 
 /*****************************************************************************/
 
@@ -191,12 +198,8 @@ void vLCD_HOME_BOTTOM_LINE(void);
 /*Library Length Function Prototypes*/
 /***********************************/
 
-/*! Function to track length of the top line of the LCD */
-void xGet_Top_Length(void);
-/*! Function to track length of the bottom line of the LCD */
-void xGet_Bottom_Length(void);
-/*! Function to get the length of a string passed into it*/
-uint8_t xGet_String_Length(string check);
+/*! Function to track remaining characters on the LCD */
+uint8_t xLCD_Get_Length();
 
 /*****************************************************************************/
 

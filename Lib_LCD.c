@@ -90,7 +90,7 @@ void vWRITE_COMMAND_TO_LCD(uint8_t RS, uint8_t data)
 
 /*!****************************************************************************
 *
-* \fn vLCD_WRITE_STRING(void)
+* \fn vLCD_WRITE_STRING(char *str_ptr)
 *
 * \brief Function to write strings to the LCD
 *
@@ -104,12 +104,34 @@ void vWRITE_COMMAND_TO_LCD(uint8_t RS, uint8_t data)
 * Modification History:
 *
 * 11/17/2013 - Original Function
+* 11/23/2013 - Addec Code
 *
 ******************************************************************************
 */
 void vLCD_WRITE_STRING(char *str_ptr)
 {
+	//MIGHT NOT WORK; not sure how the #define magic works
+	LCP = LCD_RS;				//write data (RS pin 1; E pin 0; !write pin = 0)
 	
+	
+	while(*str_ptr != '\0')		//move through the string until the end is reached
+	{
+		/*! If text wrap is enabled */
+		#ifdef configTEXT_WRAP
+			#if configTEXT_WRAP == 1
+		
+				/*! If the LCD is at the end of the top line */
+				if( xLCD_Get_Length()== 24)
+					vLCD_HOME_BOTTOM_LINE(); //Continue on to the bottom line
+		
+			#endif
+		#endif
+		LCP = LCP | LCD_E;	//set enable high
+		PORTK = *str_ptr++;		//write character to LCD
+		vTaskDelay(1);			//at least 30uS needed to display
+		LCP = LCP & LCD_E;	//set enable low
+		vTaskDelay(1);			//another 30uS delay needed
+	}	
 }
 
 /*****************************************************************************/
@@ -276,80 +298,39 @@ void vLCD_ON_OFF(void)
  *
  * \fn xGet_Top_Length(void)
  *
- * \brief Function to get the amount of space used on the top line
+ * \brief Function to get the remaining characters on the LCD
  *
- * \details Function is called to calculate the amount of characters used
- *			on the top line of the LCD.
+ * \details Function is called to calculate the amount of characters
+ *			remaining on the LCD.
  *
  *			This allows for tracking the amount of line space available.
  *			
  * \params[in] 	nothing
  *			
- * \returns nothing			
+ * \returns Number of characters remaining			
  *
  * Modification History:
  *
  * 11/17/2013 - Original Function
+ * 11/23/2013 - Added Code
  *
  ******************************************************************************
  */
-void xGet_Top_Length(void)
+void xLCD_Get_Length(void)
 {
-	//find current cursor position on the top line
-	//stores that value into a Length variable
-}
-
-/*!****************************************************************************
- *
- * \fn xGet_Bottom_Length(void)
- *
- * \brief Function to get the space available on the bottom line of the LCD.
- *
- * \details Function is called to calculate the amount of characters used
- *			on the top line of the LCD.
- *
- *			This allows for tracking the amount of line space available
- *			
- * \params[in] 	nothing
- *			
- * \returns nothing
- *
- * Modification History:
- *
- * 11/17/2013 - Original Function
- *
- ******************************************************************************
- */
-void xGet_Bottom_Length(void)
-{
-	//find current cursor position on the bottom line
-	//stores that value into a Length variable
-}
-
-/*!****************************************************************************
- *
- * \fn xGet_String_Length(void)
- *
- * \brief Function to get the length of a string
- *
- * \details Function is called to calculate the amount of characters in a string and return the value.
- *		
- *			This allows for checking string length with available line space before printing.
- *			
- * \params[in] string check - number to find the length of
- *			
- * \returns length			
- *
- * Modification History:
- *
- * 11/15/2013 - Original Function
- *
- ******************************************************************************
- */
-uint8_t xGet_String_Length(check)
-{
-	//calculate length of string
-	//return value
+	switch(CURSOR_Y_POSITION)
+	{
+		/*! If the cursor is on the top line */
+		case 0:
+			/*!give total available characters(top and bottom line)*/
+			return 48 - CURSOR_X_POSITION; 
+			break;
+			
+		/*! If the cursor is on the bottom line */
+		case 1:
+			/*! Give remaining characters available. */
+			return 24 - CURSOR_X_POSITION; 
+	}
 }
 
 /*****************************************************************************/

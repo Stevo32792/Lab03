@@ -128,9 +128,23 @@ void vLCD_WRITE_STRING(char *str_ptr)
 		#endif
 		LCP = LCP | LCD_E;	//set enable high
 		PORTK = *str_ptr++;		//write character to LCD
+<<<<<<< HEAD
 		vTaskDelay(1);			//at least 30uS needed to display
 		LCP = LCP & LCD_E;	//set enable low
 		vTaskDelay(1);			//another 30uS delay needed
+=======
+		DDRK = 0x00;
+		while(PORTK == LCD_7) //wait for the busy line
+		{
+		}
+		DDRK = 0xFF;
+		LCP = LCP & LCD_E;	//set enable low
+		DDRK = 0x00;
+		while(PORTK == LCD_7) //wait for the busy line
+		{
+		}
+		DDRK = 0xFF;
+>>>>>>> d98effdc46627401b01973e5e73afe5b7aaaa371
 	}	
 }
 

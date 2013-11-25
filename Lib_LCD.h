@@ -159,7 +159,10 @@ uint8_t OnOffStatus = 0;
 #define configCURSOR_BLINK		1
 /*! Defines the writing settings for the LCD */
 #define configTEXT_WRAP			1
+<<<<<<< HEAD
 >>>>>>> 01b1202b6193f82b0deaf704996185eb2686cae9
+=======
+>>>>>>> d98effdc46627401b01973e5e73afe5b7aaaa371
 
 /*****************************************************************************/
 

@@ -148,6 +148,20 @@ uint8_t OnOffStatus;
 #define configCURSOR_SHOW		1
 #define configCURSOR_BLINK		1
 
+//#define BITMODE4
+#define BITMODE8
+
+#define TWO_LINE_MODE		1 
+#define FONT_TYPE		1 
+#define DISPLAY_ON		1
+#define CURSOR_ON		1
+#define CURSOR_BLINK_ON		1
+#define INCREMENT_MODE		1
+#define ENTIRE_SHIFT_MODE	0
+
+#define DATA_WR 1
+#define INSTR_WR 0
+
 /*****************************************************************************/
 
 /*****************************************************************************/

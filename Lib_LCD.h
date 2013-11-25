@@ -164,6 +164,20 @@ uint8_t OnOffStatus = 0;
 =======
 >>>>>>> d98effdc46627401b01973e5e73afe5b7aaaa371
 
+//#define BITMODE4
+#define BITMODE8
+
+#define TWO_LINE_MODE		1 
+#define FONT_TYPE		1 
+#define DISPLAY_ON		1
+#define CURSOR_ON		1
+#define CURSOR_BLINK_ON		1
+#define INCREMENT_MODE		1
+#define ENTIRE_SHIFT_MODE	0
+
+#define DATA_WR 1
+#define INSTR_WR 0
+
 /*****************************************************************************/
 
 /*****************************************************************************/

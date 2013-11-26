@@ -97,11 +97,11 @@ uint8_t OnOffStatus = 0;
 /*! define MCU port connected to LCD data pins */
 #define LDP PORTK	
 /*! define MCU port connected to LCD control pins */
-#define LCP PORTK	
+#define LCP PORTJ	
 /*! define MCU register for port connected to LCD data pins */
 #define LDDR DDRK	
 /*! define MCU register for port connected to LCD control pins */
-#define LCDR DDRCK	
+#define LCDR DDRJ	
 
 /*****************************************************************************/
 
@@ -120,13 +120,23 @@ uint8_t OnOffStatus = 0;
 /*! DB0: clear display */
 #define LCD_CLR             0
 /*! return to top home position	*/
-#define LCD_HOME_TOP_LINE      1	
-/*! return to top home position	*/
-#define LCD_HOME_BOTTOM_LINE   2
-/*! DB6: set CG RAM address */
-#define LCD_CGRAM              6	
-/*! DB7: set DD RAM address */
-#define LCD_DDRAM              7	
+#define LCD_HOME_TOP_LINE   1	
+#define LCD_ENTRY_MODE      2	//DB2: set entry mode
+#define LCD_ENTRY_INC       1	//DB1: increment
+#define LCD_ENTRY_SHIFT     0	//DB2: shift
+#define LCD_ON_CTRL         3	//DB3: turn lcd/cursor on
+#define LCD_ON_DISPLAY      2	//DB2: turn display on
+#define LCD_ON_CURSOR       1	//DB1: turn cursor on
+#define LCD_ON_BLINK        0	//DB0: blinking cursor
+#define LCD_MOVE            4	//DB4: move cursor/display
+#define LCD_MOVE_DISP       3	//DB3: move display (0-> move cursor)
+#define LCD_MOVE_RIGHT      2	//DB2: move right (0-> left)
+#define LCD_FUNCTION        5	//DB5: function set
+#define LCD_FUNCTION_8BIT   4	//DB4: set 8BIT mode (0->4BIT mode)
+#define LCD_FUNCTION_2LINES 3	//DB3: two lines (0->one line)
+#define LCD_FUNCTION_10DOTS 2	//DB2: 5x10 font (0->5x7 font)
+#define LCD_CGRAM           6	//DB6: set CG RAM address
+#define LCD_DDRAM           7	//DB7: set DD RAM address	
 
 // reading:
 	/*! DB7: LCD is busy */
@@ -148,21 +158,13 @@ uint8_t OnOffStatus = 0;
 #define LCD_ON_INSTRUCTION		0x08
 
 /*! Defines the cursor settings for the LCD */
-<<<<<<< HEAD
 #define configCURSOR_SHOW			1
 #define configCURSOR_BLINK			1
 #define CURSOR_SHOW_INSTRUCTION		0x02
 #define CURSOR_BLINK_INSTRUCTION	0x01
 	
-=======
-#define configCURSOR_SHOW		1
-#define configCURSOR_BLINK		1
 /*! Defines the writing settings for the LCD */
-#define configTEXT_WRAP			1
-<<<<<<< HEAD
->>>>>>> 01b1202b6193f82b0deaf704996185eb2686cae9
-=======
->>>>>>> d98effdc46627401b01973e5e73afe5b7aaaa371
+#define configTEXT_WRAP			0
 
 //#define BITMODE4
 #define BITMODE8
@@ -188,7 +190,7 @@ uint8_t OnOffStatus = 0;
 /*! Function to Initialize an LCD Display */
 void vLCD_INITIALIZATION(void);
 /*! Function to Write commands to an LCD */
-void vWRITE_COMMAND_TO_LCD(uint8_t RS, uint8_t data);
+void vWRITE_COMMAND_TO_LCD(char RS, char data);
 /*! Functions to write strings to an LCD */
 void vLCD_WRITE_STRING(char *str_ptr);
 /*! Toggles LCD Display on and off */

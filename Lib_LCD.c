@@ -170,7 +170,7 @@ void vLCD_INITIALIZATION(void)
 		 */
 		
 		Instructions = (1 << LCD_D3) | 
-		      (DISPLAY_ON << LDC_D2) | 
+		      (DISPLAY_ON << LCD_D2) | 
 			   (CURSOR_ON << LCD_D1) | 
 		 (CURSOR_BLINK_ON << 0);
 		 
@@ -237,20 +237,20 @@ void vLCD_INITIALIZATION(void)
 */
 void vWRITE_COMMAND_TO_LCD(char RS, char data)
 {
-	if(RS == DATA_WR) PORTK = 0x80;	/*Set RS high to write data*/ 
-	else PORTK = 0x00;	/*Set RS low to write instructions*/
+	if(RS == DATA_WR) LCP = 1<<LCD_RS;	/*Set RS high to write data*/ 
+	else LCP = 0x00;	/*Set RS low to write instructions*/
 	
 	/*! Set Read/Write High*/
-	PORTK = PORTK | 0x40; 
+	LCP = LCP | 1<<LCD_RW; 
 	
 	/* Write Data*/
-	PORTB = data;
+	LDP = data;
 	
 	/*Delay at least 39us*/
 	_delay_us(50); 
 	
 	/*Set Read/Write low*/
-	PORTK = PORTK & 0x80; 
+	LCP = LCP & 1<<LCD_RS; 
 	
 	/*Delay for at least 50us*/
 	_delay_us(50); 
@@ -278,11 +278,7 @@ void vWRITE_COMMAND_TO_LCD(char RS, char data)
 ******************************************************************************
 */
 void vLCD_WRITE_STRING(char *str_ptr)
-{
-	//MIGHT NOT WORK; not sure how the #define magic works
-	LCP = LCD_RS;				//write data (RS pin 1; E pin 0; !write pin = 0)
-	
-	
+{	
 	while(*str_ptr != '\0')		//move through the string until the end is reached
 	{
 		/*! If text wrap is enabled */
@@ -295,25 +291,7 @@ void vLCD_WRITE_STRING(char *str_ptr)
 		
 			#endif
 		#endif
-		LCP = LCP | LCD_E;	//set enable high
-		PORTK = *str_ptr++;		//write character to LCD
-<<<<<<< HEAD
-		vTaskDelay(1);			//at least 30uS needed to display
-		LCP = LCP & LCD_E;	//set enable low
-		vTaskDelay(1);			//another 30uS delay needed
-=======
-		DDRK = 0x00;
-		while(PORTK == LCD_7) //wait for the busy line
-		{
-		}
-		DDRK = 0xFF;
-		LCP = LCP & LCD_E;	//set enable low
-		DDRK = 0x00;
-		while(PORTK == LCD_7) //wait for the busy line
-		{
-		}
-		DDRK = 0xFF;
->>>>>>> d98effdc46627401b01973e5e73afe5b7aaaa371
+		vWRITE_COMMAND_TO_LCD(DATA_WR, *str_ptr++);
 	}	
 }
 
@@ -349,7 +327,7 @@ void vLCD_WRITE_STRING(char *str_ptr)
 void vLCD_CLEAR(void)
 {
 	/*! Call write command to send 0x01 command (clear) to the controller */
-	vWRITE_COMMAND_TO_LCD(0, LCD_CLEAR_INSTRUCTION);
+	vWRITE_COMMAND_TO_LCD(INSTR_WR, LCD_CLEAR_INSTRUCTION);
 }
 
 /*!****************************************************************************
@@ -499,7 +477,7 @@ void vLCD_ON_OFF(void)
  *
  ******************************************************************************
  */
-void xLCD_Get_Length(void)
+uint8_t xLCD_Get_Length(void)
 {
 	switch(CURSOR_Y_POSITION)
 	{
@@ -578,7 +556,7 @@ void vLCD_GO_TO_POSITION(uint8_t x, uint8_t y)
 	CURSOR_Y_POSITION = y;
 	
 	// send a command to set the data address
-	LCDsendCommand(1<<LCD_DDRAM | DDRAMAddr);
+	vWRITE_COMMAND_TO_LCD(INSTR_WR, 1 <<LCD_DDRAM | DDRAMAddr);
 }
 
 /*!****************************************************************************
@@ -606,7 +584,7 @@ void vLCD_GO_TO_POSITION(uint8_t x, uint8_t y)
 void vLCD_HOME_TOP_LINE(void)
 {
 	//move cursor to the top left position of the LCD
-	LCDsendCommand(1 << LCD_HOME);
+	vWRITE_COMMAND_TO_LCD(INSTR_WR, 1 << LCD_HOME_TOP_LINE);
 }
 
 /*!****************************************************************************

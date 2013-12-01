@@ -423,11 +423,15 @@ void vLCD_ON_OFF(void)
 		case 0:
 			/*! Set command to turn LCD on */
 			LCD_Command = LCD_ON_INSTRUCTION;
+			/*! Set variable to mark display as on */
+			OnOffStatus = 1;
 		break;
 		
 		case 1:
 			/*! Set command to turn LCD off */
 			LCD_Command = LCD_OFF_INSTRUCTION;
+			/*! Set variable to mark display as off */
+			OnOffStatus = 0;
 		break;
 	}
 	

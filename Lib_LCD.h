@@ -73,35 +73,35 @@ uint8_t OnOffStatus = 0;
  */
 
 /*! define MCU pin connected to LCD RS */
-#define LCD_RS	0 	
+#define LCD_RS	0
 /*! define MCU pin connected to LCD R/W */
-#define LCD_RW	1 	
+#define LCD_RW	1
 /*! define MCU pin connected to LCD E */
 #define LCD_E	2
 /*! define MCU pin connected to LCD D0 */	
-#define LCD_D0	0	
+#define LCD_D0	0
 /*! define MCU pin connected to LCD D1 */
-#define LCD_D1	1	
+#define LCD_D1	1
 /*! define MCU pin connected to LCD D2 */
-#define LCD_D2	2	
+#define LCD_D2	2
 /*! define MCU pin connected to LCD D3 */
-#define LCD_D3	3	
+#define LCD_D3	3
 /*! define MCU pin connected to LCD D4 */
 #define LCD_D4	4
 /*! define MCU pin connected to LCD D5 */	
-#define LCD_D5	5	
+#define LCD_D5	5
 /*! define MCU pin connected to LCD D6 */
-#define LCD_D6	6	
+#define LCD_D6	6
 /*! define MCU pin connected to LCD D7 */
-#define LCD_D7	7	
+#define LCD_D7	7
 /*! define MCU port connected to LCD data pins */
-#define LDP PORTK	
+#define LDP PORTK
 /*! define MCU port connected to LCD control pins */
-#define LCP PORTJ	
+#define LCP PORTJ
 /*! define MCU register for port connected to LCD data pins */
-#define LDDR DDRK	
+#define LDDR DDRK
 /*! define MCU register for port connected to LCD control pins */
-#define LCDR DDRJ	
+#define LCDR DDRJ
 
 /*****************************************************************************/
 
@@ -139,12 +139,12 @@ uint8_t OnOffStatus = 0;
 #define LCD_DDRAM           7	//DB7: set DD RAM address	
 
 // reading:
-	/*! DB7: LCD is busy */
-	#define LCD_BUSY            7	
-	/*! visible lines */
-	#define LCD_LINES			2	
-	/*! line length (in characters) */
-	#define LCD_LINE_LENGTH		24	
+/*! DB7: LCD is busy */
+#define LCD_BUSY            7	
+/*! visible lines */
+#define LCD_LINES			2	
+/*! line length (in characters) */
+#define LCD_LINE_LENGTH		24	
 
 // cursor position to DDRAM mapping
 #define LCD_LINE0_DDRAMADDR		0x00
@@ -164,21 +164,21 @@ uint8_t OnOffStatus = 0;
 #define CURSOR_BLINK_INSTRUCTION	0x01
 	
 /*! Defines the writing settings for the LCD */
-#define configTEXT_WRAP			0
+#define configTEXT_WRAP		0
 
 //#define BITMODE4
 #define BITMODE8
 
-#define TWO_LINE_MODE		1 
-#define FONT_TYPE		1 
-#define DISPLAY_ON		1
-#define CURSOR_ON		1
+#define TWO_LINE_MODE		1
+#define FONT_TYPE			1
+#define DISPLAY_ON			1
+#define CURSOR_ON			1
 #define CURSOR_BLINK_ON		1
 #define INCREMENT_MODE		1
 #define ENTIRE_SHIFT_MODE	0
 
-#define DATA_WR 1
-#define INSTR_WR 0
+#define DATA_WR 			1
+#define INSTR_WR 			0
 
 /*****************************************************************************/
 

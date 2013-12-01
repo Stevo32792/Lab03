@@ -154,8 +154,8 @@ uint8_t OnOffStatus = 0;
 #define LCD_CLEAR_INSTRUCTION 	0x01
 
 /*! Instructions for setting LCD on and off */
-#define LCD_OFF_INSTRUCTION 	0x0C
-#define LCD_ON_INSTRUCTION		0x08
+#define LCD_ON_INSTRUCTION 	0x0C
+#define LCD_OFF_INSTRUCTION		0x08
 
 /*! Defines the cursor settings for the LCD */
 #define configCURSOR_SHOW			1

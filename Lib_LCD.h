@@ -151,17 +151,17 @@ uint8_t OnOffStatus = 0;
 #define LCD_LINE1_DDRAMADDR		0x40
 
 /*! Instructions for clearing LCD */
-#define LCD_CLEAR_INSTRUCTION 	0x01
+#define LCD_CLEAR_INSTRUCTION 	LCD_D0
 
 /*! Instructions for setting LCD on and off */
-#define LCD_ON_INSTRUCTION 	0x0C
-#define LCD_OFF_INSTRUCTION		0x08
+#define LCD_ON_OFF_INSTRCUTION	LCD_D3
+#define LCD_ON_INSTRUCTION 		LCD_D2
 
 /*! Defines the cursor settings for the LCD */
-#define configCURSOR_SHOW			1
-#define configCURSOR_BLINK			1
-#define CURSOR_SHOW_INSTRUCTION		0x02
-#define CURSOR_BLINK_INSTRUCTION	0x01
+#define configCURSOR_SHOW				1
+#define configCURSOR_BLINK				1
+#define LCD_CURSOR_SHOW_INSTRUCTION		LCD_D1
+#define LCD_CURSOR_BLINK_INSTRUCTION	LCD_D0
 	
 /*! Defines the writing settings for the LCD */
 #define configTEXT_WRAP		0

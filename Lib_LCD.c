@@ -342,7 +342,7 @@ void vLCD_WRITE_STRING(char *str_ptr)
 void vLCD_CLEAR(void)
 {
 	/*! Call write command to send 0x01 command (clear) to the controller */
-	vWRITE_COMMAND_TO_LCD(INSTR_WR, LCD_CLEAR_INSTRUCTION);
+	vWRITE_COMMAND_TO_LCD(INSTR_WR, 1 << LCD_CLEAR_INSTRUCTION);
 }
 
 /*!****************************************************************************
@@ -430,39 +430,15 @@ void vLCD_CLEAR_BOTTOM(void)
 */
 void vLCD_ON_OFF(void)
 {
-	uint8_t LCD_Command = 0x00;
+	/*! Create command to toggle LCD Display */
+	uint8_t LCD_Command = 
+		(1 << LCD_ON_OFF_INSTRCUTION) |
+		(OnOffStatus << LCD_ON_INSTRUCTION) |
+		(configCURSOR_SHOW << LCD_CURSOR_SHOW_INSTRUCTION) |
+		(configCURSOR_BLINK << LCD_CURSOR_BLINK_INSTRUCTION);
 	
-	/*! Check on/off status of LCD */
-	switch (OnOffStatus)
-	{
-		case 0:
-			/*! Set command to turn LCD on */
-			LCD_Command = LCD_ON_INSTRUCTION;
-			/*! Set variable to mark display as on */
-			OnOffStatus = 1;
-		break;
-		
-		case 1:
-			/*! Set command to turn LCD off */
-			LCD_Command = LCD_OFF_INSTRUCTION;
-			/*! Set variable to mark display as off */
-			OnOffStatus = 0;
-		break;
-	}
-	
-	/*! Check cursor show configuration */
-	if (configCURSOR_SHOW)
-	{
-		/*! Set command to show cursor if enabled */
-		LCD_Command += CURSOR_SHOW_INSTRUCTION;
-	}
-	
-	/*! Check cursor blink configuration */
-	if (configCURSOR_BLINK)
-	{
-		/*! Set command to blink cursor if enabled */
-		LCD_Command += CURSOR_BLINK_INSTRUCTION;
-	}
+	/*! Toggle the OnOffStatus tracker variable */
+	OnOffStatus = OnOffStatus ^ 0x01;
 	
 	/*! Toggle LCD */
 	vWRITE_COMMAND_TO_LCD(0, LCD_Command);

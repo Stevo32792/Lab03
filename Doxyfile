@@ -1176,7 +1176,12 @@ HTML_EXTRA_FILES       = doc/design/Flowcharts/vLCD_CLEAR_BOTTOM_FLOWCHART.PNG \
                          "doc/design/Test Plans/Function Test Plans PDF/vLCD_ON_OFF_CURSOR_ON_BLINK_TESTPLAN.pdf" \
                          "doc/design/Test Plans/Function Test Plans PDF/vLCD_ON_OFF_CURSOR_ON_SOLID_TESTPLAN.pdf" \
                          "doc/design/Test Plans/Function Test Plans PDF/vLCD_PRINT_STRING_TESTPLAN.pdf" \
-                         "doc/design/Test Plans/Function Test Plans PDF/xGET_LENGTH_TESTPLAN.pdf"
+                         "doc/design/Test Plans/Function Test Plans PDF/xGET_LENGTH_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_INITIALIZATION_4bit_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_INITIALIZATION_8bit_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vWRITE_COMMAND_TO_LCD_LOGIC.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_INITIALIZATION_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vWRITE_COMMAND_TO_LCD_TESTPLAN.pdf"
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the stylesheet and background images according to
@@ -2312,7 +2317,7 @@ INTERACTIVE_SVG        = NO
 # found. If left blank, it is assumed the dot tool can be found in the path.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-DOT_PATH               = "D:/Program Files (x86)/Graphviz2.32/bin"
+DOT_PATH               = "C:/Program Files (x86)/Graphviz2.32/bin"
 
 # The DOTFILE_DIRS tag can be used to specify one or more directories that
 # contain dot files that are included in the documentation (see the \dotfile

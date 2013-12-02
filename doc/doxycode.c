@@ -113,3 +113,47 @@
 	\subsection bottomhome vLCD_HOME_BOTTOM_LINE()
 	Moves the cursor to the home position of the bottom line.
 */
+
+/*! \page Flowcharts LCD Library Function Flowcharts
+
+	\tableofcontents
+	
+	\section initialization vLCD_INITIALIZATION()
+	\image html "vLCD_INITIALIZATION_FLOWCHART.PNG" "Figure 1 - LCD Initialization Function Flowchart"
+	
+	\section write vWRITE_COMMAND_TO_LCD()
+	\image html "vWRITE_COMMAND_TO_LCD_FLOWCHART.PNG" "Figure 2 - LCD Write Function Flowchart"
+	
+	\section string vLCD_WRITE_STRING(string)
+	\image html "vLCD_WRITE_STRING_FLOWCHART.PNG" "Figure 3 - LCD Write String Function Flowchart"
+	
+	\section onoff vLCD_ON_OFF()
+	\image html "vLCD_ON_OFF_FLOWCHART.PNG" "Figure 4 - LCD On/Off Function Flowchart"
+	
+	\section clear vLCD_CLEAR()
+	\image html "vLCD_CLEAR_FLOWCHART.PNG" "Figure 5 - LCD Clear Function Flowchart"
+	
+	\section clear_top vLCD_CLEAR_TOP()
+	\image html "vLCD_CLEAR_TOP_FLOWCHART.PNG" "Figure 6 - LCD Clear Top Line Function Flowchart"
+	
+	\section clear_bottom vLCD_CLEAR_BOTTOM()
+	\image html "vLCD_CLEAR_BOTTOM_FLOWCHART.PNG" "Figure 7 - LCD Clear Bottom Line Function Flowchart"
+	
+	\section position vLCD_GO_TO_POSITION(x,y)
+	\image html "vLCD_GO_TO_POSITION_FLOWCHART.PNG" "Figure 8 - LCD Go To Position Function Flowchart"
+	
+	\section tophome vLCD_HOME_TOP_LINE()
+	\image html "vLCD_HOME_TOP_LINE_FLOWCHART.PNG" "Figure 9 - LCD Home Top Line Function Flowchart"
+	
+	\section bottomhome vLCD_HOME_BOTTOM_LINE()
+	\image html "vLCD_HOME_BOTTOM_LINE_FLOWCHART.PNG" "Figure 10 - LCD Home Bottom Line Function Flowchart"
+	
+	\section gettop vLCD_GET_TOP_LENGTH()
+	\image html "vLCD_GET_TOP_LENGTH_FLOWCHART.PNG" "Figure 11 - LCD Get Top Length Function Flowchart"
+	
+	\section getbottom vLCD_GET_BOTTOM_LENGTH()
+	\image html "vLCD_GET_BOTTOM_LENGTH_FLOWCHART.PNG" "Figure 12 - LCD Get Bottom Length Function Flowchart"
+	
+	\section getlength xLCD_GET_LENGTH()
+	\image html "xLCD_GET_LENGTH_FLOWCHART.PNG" "Figure 13 - LCD Get Length Function Flowchart"
+*/

@@ -20,7 +20,7 @@
  
  /* #includes go here */
  
- /*****************************************************************************/
+/*****************************************************************************/
 /****************************/
 /*Library LCD Initialization*/
 /****************************/
@@ -43,11 +43,18 @@
 *
 * 11/17/2013 - Original Function
 *
-******************************************************************************
-*/
+*******************************************************************************/
 void vLCD_INITIALIZATION(void)
 {
 	unsigned char Instructions = 0x00;
+	
+	/*! Initialize the Data Bit port for initially low output*/
+	LDDR = 0xFF;
+	LDP =  0x00;
+	
+	/*! Initialize the Control Bit port for initially low output*/
+	LCDR = 0xFF;
+	LCP =  0x00;	
 	
 	#ifdef BITMODE4
 		/*! Delay more than 30ms after powering up*/
@@ -233,8 +240,7 @@ void vLCD_INITIALIZATION(void)
 *
 * 11/17/2013 - Original Function
 *
-******************************************************************************
-*/
+*******************************************************************************/
 void vWRITE_COMMAND_TO_LCD(char RS, char data)
 {
 	if(RS == DATA_WR) LCP = 1<<LCD_RS;	/*Set RS high to write data*/ 

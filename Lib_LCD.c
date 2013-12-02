@@ -185,6 +185,8 @@ void vLCD_INITIALIZATION(void)
 		 
 		 vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
 		 
+		 OnOffStatus = 0;
+		 
 		/*! Delay more than 39us*/
 		_delay_us(50);
 		
@@ -351,6 +353,8 @@ void vLCD_CLEAR(void)
 {
 	/*! Call write command to send 0x01 command (clear) to the controller */
 	vWRITE_COMMAND_TO_LCD(INSTR_WR, 1 << LCD_CLEAR_INSTRUCTION);
+	/*! Delay 1.53 ms to allow clear to finish */
+	_delay_us(1530);
 }
 
 /*!****************************************************************************
@@ -450,6 +454,8 @@ void vLCD_ON_OFF(void)
 	
 	/*! Toggle LCD */
 	vWRITE_COMMAND_TO_LCD(0, LCD_Command);
+	/*! Delay greater than 39us to allow LCD to complete operation */
+	_delay_us(50);
 }
 /*****************************************************************************/
 
@@ -548,6 +554,9 @@ void vLCD_GO_TO_POSITION(uint8_t x, uint8_t y)
 	
 	// send a command to set the data address
 	vWRITE_COMMAND_TO_LCD(INSTR_WR, 1 <<LCD_DDRAM | DDRAMAddr);
+	
+	// Delay greater than 39us to allow LCD to complete operation
+	_delay_us(50);
 }
 
 /*!****************************************************************************
@@ -576,6 +585,9 @@ void vLCD_HOME_TOP_LINE(void)
 {
 	//move cursor to the top left position of the LCD
 	vWRITE_COMMAND_TO_LCD(INSTR_WR, 1 << LCD_HOME_TOP_LINE);
+	
+	// Delay greater than 1.53ms to allow LCD to complete operation
+	_delay_us(1530);
 }
 
 /*!****************************************************************************
@@ -604,6 +616,9 @@ void vLCD_HOME_BOTTOM_LINE(void)
 {
 	//move the cursor to the bottom left position on the LCD
 	vLCD_GO_TO_POSITION(0,1);
+	
+	// Delay greater than 39us to allow LCD to complete operation
+	_delay_us(50);
 }
 
 /*****************************************************************************/

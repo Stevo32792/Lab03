@@ -204,7 +204,7 @@ void vLCD_ON_OFF(void);
 /**********************************/
 
 /*! Function To go directly to a set of X,Y coordinates on the LCD */
-void vLCD_GO_TO_Position(uint8_t, uint8_t);
+void vLCD_GO_TO_POSITION(uint8_t, uint8_t);
 /*! Function to go to home position on the top line of the LCD*/
 void vLCD_HOME_TOP_LINE(void);
 /*! Function to go to home position on the top line of the LCD*/

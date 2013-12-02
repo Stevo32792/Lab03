@@ -172,8 +172,8 @@ uint8_t OnOffStatus = 0;
 #define TWO_LINE_MODE		1
 #define FONT_TYPE			1
 #define DISPLAY_ON			1
-#define CURSOR_ON			1
-#define CURSOR_BLINK_ON		1
+#define CURSOR_ON			configCURSOR_SHOW
+#define CURSOR_BLINK_ON		configCURSOR_BLINK
 #define INCREMENT_MODE		1
 #define ENTIRE_SHIFT_MODE	0
 

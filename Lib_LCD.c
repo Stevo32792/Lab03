@@ -118,8 +118,6 @@ void vLCD_INITIALIZATION(void)
 		(ENTIRE_SHIFT_MODE << 0);
 		
 		vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-		
-	#endif;
 	
 	/*! Set cursor position to zero*/
 	CURSOR_X_POSITION = 0;

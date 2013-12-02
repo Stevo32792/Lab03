@@ -49,103 +49,6 @@ void vLCD_INITIALIZATION(void)
 {
 	unsigned char Instructions = 0x00;
 	
-	/*! Initialize the Data Bit port for initially low output*/
-	LDDR = 0xFF;
-	LDP =  0x00;
-	
-	/*! Initialize the Control Bit port for initially low output*/
-	LCDR = 0xFF;
-	LCP =  0x00;	
-	
-	
-	#ifdef BITMODE4
-		/*! Delay more than 30ms after powering up*/
-		_delay_ms(35);
-		
-		/***************************************************************************/
-		/*! ###Function set###
-		/***************************************************************************/
-		
-		/*!
-		 * Set LCD in one or two line mode
-		 * Set LCD Font type 5x11 dots or 5x8 dots
-		 */
-		
-		Instructions = (1<<LCD_D5);
-		
-		vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-		vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-		
-		Instructions = (TWO_LINE_MODE<<LCD_D7)|(DISPLAY_ON<<LCD_D6);
-		
-		vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-		
-		/*! Delay more than 39us*/
-		_delay_us(50);
-		
-		/***************************************************************************/
-		/*! ###Display ON/OFF Control###
-		/***************************************************************************/
-		
-		/*!
-		 * Set LCD to have display on
-		 * Set LCD Cursor on or off
-		 * Set Cursor to blink or not
-		 */
-		
-		Instructions = 0x00;
-		
-		vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-		
-		Instructions = (1 << LCD_D7) | 
-			  (DISPLAY_ON << LCD_D6) | 
-			   (CURSOR_ON << LCD_D5) | 
-		 (CURSOR_BLINK_ON << LCD_D4);
-		 
-		 vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-		 
-		/*! Delay more than 39us*/
-		_delay_us(50);
-		
-		/***************************************************************************/
-		/*! ###Display Clear###
-		/***************************************************************************/
-		
-		Instructions = 0x00;
-		
-		vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-		
-		/*! Write Commands to clear the screen*/
-		
-		Instructions = (1<<LCD_D4);
-		
-		vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-		
-		/*! Delay more than 1.53ms*/
-		_delay_us(1600);
-		
-		/***************************************************************************/
-		/*! ###Entry Mode set###
-		/***************************************************************************/
-		
-		Instructions = 0x00;
-		
-		vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-		
-		/*!
-		 * Set LCD in Increment or decrement mode
-		 * Set LCD to entire shift mode if desired
-		 */
-		
-		Instructions =  (1 << LCD_D6) | 
-		   (INCREMENT_MODE << LCD_D5) | 
-	    (ENTIRE_SHIFT_MODE << LCD_D4);
-		
-		vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
-	#endif;
-	
-	#ifdef BITMODE8
-	
 		/*! Delay  more than 30ms after powering up*/
 		_delay_ms(35);
 		
@@ -185,8 +88,6 @@ void vLCD_INITIALIZATION(void)
 		 
 		 vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
 		 
-		 OnOffStatus = 0;
-		 
 		/*! Delay more than 39us*/
 		_delay_us(50);
 		
@@ -222,8 +123,8 @@ void vLCD_INITIALIZATION(void)
 	
 	/*! Set cursor position to zero*/
 	CURSOR_X_POSITION = 0;
-	CURSOR_Y_POSITION = 0;
 }
+
 
 /*****************************************************************************/
 /*************************************/
@@ -261,19 +162,30 @@ void vWRITE_COMMAND_TO_LCD(char RS, char data)
 	_delay_us(50);
 	
 	/* Write Data*/
-	LDP = data;
-	if (RS = DATA_WR)
+	
+	#ifdef BITMODE4
+		LDP = data; 
+		data = (data << 4);
+		LDP =  data; 
+	#endif;
+
+	#ifdef BITMODE8
+		LDP = data;
+	#endif
+	
+	if (RS == DATA_WR)
 	{
 		/*!Increment Cursor Position*/
 		CURSOR_X_POSITION++;
 	}		
 	
 	/*Set Read/Write low*/
-	LCP = LCP & 1<<LCD_RS;
+	LCP = LCP & 1<<LCD_RS; 
 	
 	/*! Delay for more than 39us*/
 	_delay_us(50);
 }
+
 
 
 /*!****************************************************************************

@@ -170,7 +170,7 @@ void vLCD_INITIALIZATION(void)
 		 */
 		
 		Instructions = (1 << LCD_D3) | 
-		      (DISPLAY_ON << LDC_D2) | 
+		      (DISPLAY_ON << LCD_D2) | 
 			   (CURSOR_ON << LCD_D1) | 
 		 (CURSOR_BLINK_ON << 0);
 		 
@@ -237,23 +237,29 @@ void vLCD_INITIALIZATION(void)
 */
 void vWRITE_COMMAND_TO_LCD(char RS, char data)
 {
-	if(RS == DATA_WR) PORTK = 0x80;	/*Set RS high to write data*/ 
-	else PORTK = 0x00;	/*Set RS low to write instructions*/
+	/*! Set DB7 pin to read*/
+	LDDR = LDDR & 0x7F;
 	
-	/*! Set Read/Write High*/
-	PORTK = PORTK | 0x40; 
+	/*! Wait for Busy flag to clear*/
+	while(LDP & 0x80);
+	
+	/*! Set LCD_D7 pin for output*/
+	LDDR = LDDR | (1 << LCD_D7);
+	
+	if(RS == DATA_WR) LCP = 1 << LCD_RS;	/*Set RS high to write data*/ 
+	else LCP = 0x00;	/*Set RS low to write instructions*/
+	
+	/*! Enable display for use*/
+	LCP = LCP | 1<<LCD_E; 
 	
 	/* Write Data*/
-	PORTB = data;
+	LDP = data;
 	
-	/*Delay at least 39us*/
-	_delay_us(50); 
+	/*! Wait for Busy flag to clear*/
+	while(LDP & 0x80); 
 	
 	/*Set Read/Write low*/
-	PORTK = PORTK & 0x80; 
-	
-	/*Delay for at least 50us*/
-	_delay_us(50); 
+	LCP = LCP & 1<<LCD_RS; 
 }
 
 

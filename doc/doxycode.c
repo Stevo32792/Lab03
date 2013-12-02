@@ -9,7 +9,7 @@
  *				This driver is to be used with the latest build of FreeRTOS. 
  *				It should allow for the direct writing of data to the LCD. 
  *
- *  \subsection Design/Decomposition
+ *  \subsection Design and Decomposition
 *				
 *				The drivers for the dot matrix controller will be able to write to both lines of the LCD display. 
 *				This will be done by implementing APIs that can be called from the latest FreeRTOS OS distribution. 

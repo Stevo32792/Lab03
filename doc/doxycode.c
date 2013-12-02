@@ -1,3 +1,56 @@
+/*! 
+ *	\mainpage FreeRTOS LCD Library
+ *
+ *
+ *	\section  Problem
+ *
+ *				Develop an interrupt driven software driver for a 2x24 LCD with an 
+ *				onboard KS0066U dot matrix controller. 
+ *				This driver is to be used with the latest build of FreeRTOS. 
+ *				It should allow for the direct writing of data to the LCD. 
+ *
+ *  \subsection Design/Decomposition
+*				
+*				The drivers for the dot matrix controller will be able to write to both lines of the LCD display. 
+*				This will be done by implementing APIs that can be called from the latest FreeRTOS OS distribution. 
+*				All driver definitions, functions, and configurations will be written following FreeRTOS naming conventions for was of use.
+*				The APIs will give instructions to the dot matrix controller. These instructions will be available through API calls. 
+*				The available instructions to call will include turning the display on and off, initializing the display, clearing the display, 
+*				change the entry mode of the display, change the cursor mode, change the cursor position, write a string to the display, 
+				and write a variable to the display. An API call will also be available to pass custom instructions or data to the dot matrix controller.
+				
+ *  \subsection Testing
+ 
+				To test the LCD display drivers, a working FreeRTOS build will be used to create a single task. 
+				This task will be used to host each API call individually to test for proper usage from each API call. 
+				A full system test will be done by using every API call in the task, followed by a write command to the LCD to ensure each instruction works. 
+				This will ensure each instruction works properly with the other instructions in the driver.
+				
+ * \subsection Documentation
+				
+				Doxygen will be used to provide detailed documentation of all code done for the LCD driver. 
+				Each code file, function, and variable will have proper documentation, stating the purpose of the item being documented, 
+				both briefly and in detail. As well, each code file and function will have a revision history. 
+				All code will contain useful comments in-line using Doxygen hooks. The end result shall be useful documentation that is easy to follow. 
+				This final documentation shall include call and caller graphs so flow within the code file can be understood. 
+				Any file that does not pertain to the LCD driver will not be included or documented within doxygen, including FreeRTOS code.
+
+ * \subsection Version Control
+	
+				Version Control will be implemented using Git. Working in a group of four requires the use of a distributed version control system. 
+				Git has the feature set to clone, edit, and push changes back to the working code. All changes will receive their own commit, 
+				with the text of the commit being brief information as to what was changed. 
+				The main working repository will be hosted on a cloud-based sharing service, such as GitHub. 
+				This will allow for all persons editing the code to be able to clone and work from the most recent revision of the code.
+ 
+				Using GitHub will allow for easy hosting of the remote Git repository. Due to the fact that many of the people in our group are limited 
+				by the network settings and securities of apartment complexes, this will work nicely. Assigning one person to be the integration manager, 
+				all other members of the group will work as developers. The manager is the person who originally uploads the code, and therefore has the 
+				responsibility to merge changes into that repository. The developers clone the manager’s repository to make changes, and notify the manager 
+				when they want their changes merged with the blessed repository. Every member of the group will get the chance to be the manager, giving them 
+				the experience to do a merge.
+ */
+
 /*! \page Usage LCD Library Usage
 
 	\tableofcontents

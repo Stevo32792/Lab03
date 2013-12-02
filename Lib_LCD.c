@@ -43,7 +43,8 @@
 *
 * 11/17/2013 - Original Function
 *
-*******************************************************************************/
+******************************************************************************
+*/
 void vLCD_INITIALIZATION(void)
 {
 	unsigned char Instructions = 0x00;
@@ -55,6 +56,7 @@ void vLCD_INITIALIZATION(void)
 	/*! Initialize the Control Bit port for initially low output*/
 	LCDR = 0xFF;
 	LCP =  0x00;	
+	
 	
 	#ifdef BITMODE4
 		/*! Delay more than 30ms after powering up*/
@@ -216,6 +218,8 @@ void vLCD_INITIALIZATION(void)
 		
 	#endif;
 	
+	/*! Set cursor position to zero*/
+	CURSOR_X_POSITION = 0;
 }
 
 /*****************************************************************************/
@@ -240,32 +244,32 @@ void vLCD_INITIALIZATION(void)
 *
 * 11/17/2013 - Original Function
 *
-*******************************************************************************/
+******************************************************************************
+*/
 void vWRITE_COMMAND_TO_LCD(char RS, char data)
-{
-	/*! Set DB7 pin to read*/
-	LDDR = LDDR & 0x7F;
-	
-	/*! Wait for Busy flag to clear*/
-	while(LDP & 0x80);
-	
-	/*! Set LCD_D7 pin for output*/
-	LDDR = LDDR | (1 << LCD_D7);
-	
+{		
 	if(RS == DATA_WR) LCP = 1 << LCD_RS;	/*Set RS high to write data*/ 
 	else LCP = 0x00;	/*Set RS low to write instructions*/
 	
 	/*! Enable display for use*/
 	LCP = LCP | 1<<LCD_E; 
 	
+	/*! Delay for more than 39us*/
+	_delay_us(50);
+	
 	/* Write Data*/
 	LDP = data;
-	
-	/*! Wait for Busy flag to clear*/
-	while(LDP & 0x80); 
+	if (RS = DATA_WR)
+	{
+		/*!Increment Cursor Position*/
+		CURSOR_X_POSITION++;
+	}		
 	
 	/*Set Read/Write low*/
 	LCP = LCP & 1<<LCD_RS;
+	
+	/*! Delay for more than 39us*/
+	_delay_us(50);
 }
 
 

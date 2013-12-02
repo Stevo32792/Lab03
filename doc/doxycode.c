@@ -4,7 +4,7 @@
 	
 	The purpose of this page is to highlight the functions that can be called
 	from the library and how they are used. This library is used to drive an
-	LCD using the 
+	LCD using the KS0066U dot matrix controller.
 	
 	\section Defines Defines
 	\subsection Wiring LCD Wiring

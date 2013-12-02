@@ -157,3 +157,53 @@
 	\section getlength xLCD_GET_LENGTH()
 	\image html "xLCD_GET_LENGTH_FLOWCHART.PNG" "Figure 13 - LCD Get Length Function Flowchart"
 */
+
+/*! \page TestPlans LCD Library Test Plans
+
+	\tableofcontents
+	
+	\section Lab 3 Test Plans
+	<a href="LAB3_TEST_PLANS.pdf"> Lab 3 Integration test Plans </a>
+	
+	\section string vLCD_WRITE_STRING(string)
+	<a href="vLCD_PRINT_STRING_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vLCD_PRINT_STRING_LOGIC.pdf"> Logic Test Plans </a>
+	
+	\section onoff vLCD_ON_OFF()
+	<a href="vLCD_ON_OFF_CURSOR_OFF_BLINK_TESTPLAN.pdf"> Cursor Off Blink Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_OFF_BLINK_LOGIC.pdf"> Cursor Off Blink Logic Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_OFF_SOLID_TESTPLAN.pdf"> Cursor Off Solid Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_OFF_SOLID_LOGIC.pdf"> Cursor Off Solid Logic Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_ON_BLINK_TESTPLAN.pdf"> Cursor On Blink Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_ON_BLINK_LOGIC.pdf"> Cursor On Blink Logic Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_ON_SOLID_TESTPLAN.pdf"> Cursor On Solid Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_ON_SOLID_LOGIC.pdf"> Cursor On Solid Logic Test Plans </a>
+	
+	\section clear vLCD_CLEAR()
+	<a href="vLCD_CLEAR_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vLCD_CLEAR_LOGIC.pdf"> Logic Test Plans </a>
+	
+	\section clear_top vLCD_CLEAR_TOP()
+	<a href="vLCD_CLEAR_TOP_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vLCD_CLEAR_TOP_LOGIC.pdf"> Logic Test Plans </a>
+	
+	\section clear_bottom vLCD_CLEAR_BOTTOM()
+	<a href="vLCD_CLEAR_BOTTOM_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vLCD_CLEAR_BOTTOM_LOGIC.pdf"> Logic Test Plans </a>
+	
+	\section position vLCD_GO_TO_POSITION(x,y)
+	<a href="vLCD_GO_TO_POSITION_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vLCD_GO_TO_POSITION_LOGIC.pdf"> Logic Test Plans </a>
+	
+	\section tophome vLCD_HOME_TOP_LINE()
+	<a href="vLCD_HOME_TOP_LINE_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vLCD_HOME_TOP_LINE_LOGIC.pdf"> Logic Test Plans </a>
+	
+	\section bottomhome vLCD_HOME_BOTTOM_LINE()
+	<a href="vLCD_HOME_BOTTOM_LINE_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vLCD_HOME_BOTTOM_LINE_LOGIC.pdf"> Logic Test Plans </a>
+	
+	\section getlength xLCD_GET_LENGTH()
+	<a href="vLCD_PRINT_STRING_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vLCD_PRINT_STRING_LOGIC.pdf"> Logic Test Plans </a>
+*/

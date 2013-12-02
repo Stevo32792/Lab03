@@ -26,5 +26,6 @@ var searchData=
   ['lib_5flcd_2ec',['Lib_LCD.c',['../_lib___l_c_d_8c.html',1,'']]],
   ['lib_5flcd_2eh',['Lib_LCD.h',['../_lib___l_c_d_8h.html',1,'']]],
   ['lab03',['Lab03',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['lcd_20library_20test_20plans',['LCD Library Test Plans',['../_test_plans.html',1,'']]],
   ['lcd_20library_20usage',['LCD Library Usage',['../_usage.html',1,'']]]
 ];

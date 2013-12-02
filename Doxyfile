@@ -1139,8 +1139,44 @@ HTML_EXTRA_STYLESHEET  =
 # files will be copied as-is; there are no commands or markers available.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_FILES       = "F:/Files/Documents/GitHub/Lab03 Test/doc/design/LAB3_FLOWCHARTS.pdf" \
-                         "F:/Files/Documents/GitHub/Lab03 Test/doc/design/LAB3_TEST_PLANS.pdf"
+HTML_EXTRA_FILES       = doc/design/Flowcharts/vLCD_CLEAR_BOTTOM_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_CLEAR_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_CLEAR_TOP_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_GET_BOTTOM_LENGTH_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_GET_TOP_LENGTH_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_GO_TO_POSITION_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_HOME_BOTTOM_LINE_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_HOME_TOP_LINE_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_INITIALIZATION_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_ON_OFF_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vLCD_WRITE_STRING_FLOWCHART.PNG \
+                         doc/design/Flowcharts/vWRITE_COMMAND_TO_LCD_FLOWCHART.PNG \
+                         doc/design/Flowcharts/xLCD_GET_LENGTH_FLOWCHART.PNG \
+                         "doc/design/Test Plans/LAB3_TEST_PLANS.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_CLEAR_BOTTOM_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_CLEAR_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_CLEAR_TOP_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_GO_TO_POSITION_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_HOME_BOTTOM_LINE_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_HOME_TOP_LINE_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_ON_OFF_CURSOR_OFF_BLINK_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_ON_OFF_CURSOR_OFF_SOLID_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_ON_OFF_CURSOR_ON_BLINK_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_ON_OFF_CURSOR_ON_SOLID_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/vLCD_PRINT_STRING_LOGIC.pdf" \
+                         "doc/design/Test Plans/Logic Test Plans PDF/xGET_LENGTH_LOGIC.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_CLEAR_BOTTOM_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_CLEAR_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_CLEAR_TOP_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_GO_TO_POSITION_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_HOME_BOTTOM_LINE_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_HOME_TOP_LINE_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_ON_OFF_CURSOR_OFF_BLINK_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_ON_OFF_CURSOR_OFF_SOLID_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_ON_OFF_CURSOR_ON_BLINK_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_ON_OFF_CURSOR_ON_SOLID_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/vLCD_PRINT_STRING_TESTPLAN.pdf" \
+                         "doc/design/Test Plans/Function Test Plans PDF/xGET_LENGTH_TESTPLAN.pdf"
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the stylesheet and background images according to

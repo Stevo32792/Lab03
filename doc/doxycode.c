@@ -165,6 +165,15 @@
 	\section Lab 3 Test Plans
 	<a href="LAB3_TEST_PLANS.pdf"> Lab 3 Integration test Plans </a>
 	
+	\section initialization	vLCD_INITIALIZATION()
+	<a href="vLCD_INITIALIZATION_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vLCD_INITIALIZATION_8bit_LOGIC.pdf"> 8-bit Logic Test Plans </a> <br>
+	<a href="vLCD_INITIALIZATION_4bit_LOGIC.pdf"> 4-bit Logic Test Plans </a>
+	
+	\section command vWRITE_COMMAND_TO_LCD(RS,data)
+	<a href="vWRITE_COMMAND_TO_LCD_TESTPLAN.pdf"> Test Plans </a> <br>
+	<a href="vWRITE_COMMAND_TO_LCD_LOGIC.pdf"> Logic Test Plans </a>
+	
 	\section string vLCD_WRITE_STRING(string)
 	<a href="vLCD_PRINT_STRING_TESTPLAN.pdf"> Test Plans </a> <br>
 	<a href="vLCD_PRINT_STRING_LOGIC.pdf"> Logic Test Plans </a>

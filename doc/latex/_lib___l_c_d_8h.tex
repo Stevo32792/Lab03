@@ -553,42 +553,42 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{_lib___l_c_d_8h_a1c8e4b3ff3b5366283a227f3efa1b76e}
 Function To go directly to a set of X,Y coordinates on the L\-C\-D 
 
-Definition at line 520 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 531 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-521 \{
-522     \textcolor{comment}{//save the current position}
-523     \textcolor{keyword}{register} uint8\_t DDRAMAddr;
-524     
-525     \textcolor{comment}{// For each line o the LCD}
-526     \textcolor{keywordflow}{switch}(y)
-527     \{
-528         \textcolor{keywordflow}{case} 0: 
-529             \textcolor{comment}{//for the top line, set the DDRAM address }
-530             \textcolor{comment}{//move a certain number of characters to the right}
-531             DDRAMAddr = LCD\_LINE0\_DDRAMADDR + x;
-532         \textcolor{keywordflow}{break};
-533         
-534         \textcolor{keywordflow}{case} 1: 
-535             \textcolor{comment}{//for the bottom line, set the DDRAM address }
-536             \textcolor{comment}{//move a certain number of characters to the right}
-537             DDRAMAddr = LCD\_LINE1\_DDRAMADDR + x;
-538         \textcolor{keywordflow}{break};
-539         
-540         \textcolor{keywordflow}{default}: 
-541             \textcolor{comment}{//default to the top left of the LCD if nothing is specified}
-542             DDRAMAddr = LCD\_LINE0\_DDRAMADDR+x;
-543     \}
-544     
-545     \textcolor{comment}{//save current cursor position X}
-546     \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION} = x;
-547     \textcolor{comment}{//save current cursor position Y}
-548     \hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION} = y;
-549     
-550     \textcolor{comment}{// send a command to set the data address}
-551     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 <<LCD\_DDRAM | DDRAMAddr);
-552 \}
+532 \{
+533     \textcolor{comment}{//save the current position}
+534     \textcolor{keyword}{register} uint8\_t DDRAMAddr;
+535     
+536     \textcolor{comment}{// For each line o the LCD}
+537     \textcolor{keywordflow}{switch}(y)
+538     \{
+539         \textcolor{keywordflow}{case} 0: 
+540             \textcolor{comment}{//for the top line, set the DDRAM address }
+541             \textcolor{comment}{//move a certain number of characters to the right}
+542             DDRAMAddr = LCD\_LINE0\_DDRAMADDR + x;
+543         \textcolor{keywordflow}{break};
+544         
+545         \textcolor{keywordflow}{case} 1: 
+546             \textcolor{comment}{//for the bottom line, set the DDRAM address }
+547             \textcolor{comment}{//move a certain number of characters to the right}
+548             DDRAMAddr = LCD\_LINE1\_DDRAMADDR + x;
+549         \textcolor{keywordflow}{break};
+550         
+551         \textcolor{keywordflow}{default}: 
+552             \textcolor{comment}{//default to the top left of the LCD if nothing is specified}
+553             DDRAMAddr = LCD\_LINE0\_DDRAMADDR+x;
+554     \}
+555     
+556     \textcolor{comment}{//save current cursor position X}
+557     \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION} = x;
+558     \textcolor{comment}{//save current cursor position Y}
+559     \hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION} = y;
+560     
+561     \textcolor{comment}{// send a command to set the data address}
+562     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 <<LCD\_DDRAM | DDRAMAddr);
+563 \}
 \end{DoxyCode}
 
 
@@ -642,14 +642,14 @@ Modification History\-:
 
 11/15/2013 -\/ Original Function 
 
-Definition at line 604 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 615 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-605 \{
-606     \textcolor{comment}{//move the cursor to the bottom left position on the LCD}
-607     \hyperlink{_lib___l_c_d_8c_a3d78bee51edcb0ebe6cf4936147bb207}{vLCD\_GO\_TO\_POSITION}(0,1);
-608 \}
+616 \{
+617     \textcolor{comment}{//move the cursor to the bottom left position on the LCD}
+618     \hyperlink{_lib___l_c_d_8c_a3d78bee51edcb0ebe6cf4936147bb207}{vLCD\_GO\_TO\_POSITION}(0,1);
+619 \}
 \end{DoxyCode}
 
 
@@ -703,14 +703,14 @@ Modification History\-:
 
 11/15/2013 -\/ Original Function 
 
-Definition at line 576 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 587 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-577 \{
-578     \textcolor{comment}{//move cursor to the top left position of the LCD}
-579     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 << \hyperlink{_lib___l_c_d_8h_a207e17a2f807f034c0fc055010928a16}{LCD\_HOME\_TOP\_LINE});
-580 \}
+588 \{
+589     \textcolor{comment}{//move cursor to the top left position of the LCD}
+590     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 << \hyperlink{_lib___l_c_d_8h_a207e17a2f807f034c0fc055010928a16}{LCD\_HOME\_TOP\_LINE});
+591 \}
 \end{DoxyCode}
 
 
@@ -1085,16 +1085,26 @@ Definition at line 472 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 \begin{DoxyCode}
 473 \{
-474     \textcolor{keywordflow}{switch}(\hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION})
-475     \{
-477         \textcolor{keywordflow}{case} 0:
-479             \textcolor{keywordflow}{return} 48 - \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION}; 
-480             \textcolor{keywordflow}{break};
-481             
-483         \textcolor{keywordflow}{case} 1:
-485             \textcolor{keywordflow}{return} 24 - \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION}; 
-486     \}
-487 \}
+474     uint8\_t temp;
+475     \textcolor{keywordflow}{switch}(\hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION})
+476     \{
+478         \textcolor{keywordflow}{case} 0:
+481             temp = 48 - \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION};
+482             \textcolor{keywordflow}{if} (temp < 24)
+483                 \textcolor{keywordflow}{return} 24;
+484             \textcolor{keywordflow}{else}
+485                 \textcolor{keywordflow}{return} temp;
+486             \textcolor{keywordflow}{break};
+487             
+489         \textcolor{keywordflow}{case} 1:
+491             temp = 24 - \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION}; 
+492             \textcolor{keywordflow}{if} (temp > 0)
+493                 \textcolor{keywordflow}{return} temp;
+494             \textcolor{keywordflow}{else}
+495                 \textcolor{keywordflow}{return} 0;
+496             \textcolor{keywordflow}{break};
+497     \}
+498 \}
 \end{DoxyCode}
 
 

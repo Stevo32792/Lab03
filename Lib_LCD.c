@@ -237,13 +237,12 @@ void vLCD_INITIALIZATION(void)
 */
 void vWRITE_COMMAND_TO_LCD(char RS, char data)
 {
-<<<<<<< HEAD
 	if(RS == DATA_WR) LCP = 1<<LCD_RS;	/*Set RS high to write data*/ 
 	else LCP = 0x00;	/*Set RS low to write instructions*/
 	
 	/*! Set Read/Write High*/
 	LCP = LCP | 1<<LCD_RW; 
-=======
+
 	/*! Set DB7 pin to read*/
 	LDDR = LDDR & 0x7F;
 	
@@ -258,7 +257,6 @@ void vWRITE_COMMAND_TO_LCD(char RS, char data)
 	
 	/*! Enable display for use*/
 	LCP = LCP | 1<<LCD_E; 
->>>>>>> 6e817521ee2b6bab2743d4d1702f4292777e0046
 	
 	/* Write Data*/
 	LDP = data;
@@ -267,13 +265,10 @@ void vWRITE_COMMAND_TO_LCD(char RS, char data)
 	while(LDP & 0x80); 
 	
 	/*Set Read/Write low*/
-	LCP = LCP & 1<<LCD_RS; 
-<<<<<<< HEAD
+	LCP = LCP & 1<<LCD_RS;
 	
 	/*Delay for at least 50us*/
-	_delay_us(50); 
-=======
->>>>>>> 6e817521ee2b6bab2743d4d1702f4292777e0046
+	_delay_us(50);
 }
 
 

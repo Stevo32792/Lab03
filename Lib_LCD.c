@@ -471,18 +471,29 @@ void vLCD_ON_OFF(void)
  */
 uint8_t xLCD_Get_Length(void)
 {
+	uint8_t temp;
 	switch(CURSOR_Y_POSITION)
 	{
 		/*! If the cursor is on the top line */
 		case 0:
 			/*!give total available characters(top and bottom line)*/
-			return 48 - CURSOR_X_POSITION; 
+			
+			temp = 48 - CURSOR_X_POSITION;
+			if (temp < 24)
+				return 24;
+			else
+				return temp;
 			break;
 			
 		/*! If the cursor is on the bottom line */
 		case 1:
 			/*! Give remaining characters available. */
-			return 24 - CURSOR_X_POSITION; 
+			temp = 24 - CURSOR_X_POSITION; 
+			if (temp > 0)
+				return temp;
+			else
+				return 0;
+			break;
 	}
 }
 

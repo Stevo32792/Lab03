@@ -219,7 +219,7 @@ void vLCD_WRITE_STRING(char *str_ptr)
 			#if configTEXT_WRAP == 1
 		
 				/*! If the LCD is at the end of the top line */
-				if( xLCD_Get_Length()<= 0 && CURSOR_Y_POSITION == 0)
+				if( xLCD_Get_Length() <= 0 && CURSOR_Y_POSITION == 0)
 					vLCD_HOME_BOTTOM_LINE(); //Continue on to the bottom line
 		
 			#endif

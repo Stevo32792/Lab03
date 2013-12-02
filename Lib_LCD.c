@@ -285,12 +285,14 @@ void vWRITE_COMMAND_TO_LCD(char RS, char data)
 * Modification History:
 *
 * 11/17/2013 - Original Function
-* 11/23/2013 - Addec Code
+* 11/23/2013 - Added Code
+* 11/30/2013 - Limit bottom line to prevent rollover
 *
 ******************************************************************************
 */
 void vLCD_WRITE_STRING(char *str_ptr)
 {	
+	uint8_t character;
 	while(*str_ptr != '\0')		//move through the string until the end is reached
 	{
 		/*! If text wrap is enabled */
@@ -298,12 +300,17 @@ void vLCD_WRITE_STRING(char *str_ptr)
 			#if configTEXT_WRAP == 1
 		
 				/*! If the LCD is at the end of the top line */
-				if( xLCD_Get_Length()== 24)
+				if( xLCD_Get_Length()<= 0 && CURSOR_Y_POSITION == 0)
 					vLCD_HOME_BOTTOM_LINE(); //Continue on to the bottom line
 		
 			#endif
 		#endif
-		vWRITE_COMMAND_TO_LCD(DATA_WR, *str_ptr++);
+		/*! Limit the length of the bottom line to prevent rollover */
+		if (!(xLCD_Get_Length() <= 0 && CURSOR_Y_POSITION == 1))
+		{
+			character = *str_ptr++; //increment pointer
+			vWRITE_COMMAND_TO_LCD(DATA_WR, character); //print character
+		}			
 	}	
 }
 
@@ -454,13 +461,13 @@ void vLCD_ON_OFF(void)
  * \brief Function to get the remaining characters on the LCD
  *
  * \details Function is called to calculate the amount of characters
- *			remaining on the LCD.
+ *			remaining on the current line
  *
  *			This allows for tracking the amount of line space available.
  *			
  * \params[in] 	nothing
  *			
- * \returns Number of characters remaining			
+ * \returns Number of characters remaining on the current line			
  *
  * Modification History:
  *
@@ -471,30 +478,7 @@ void vLCD_ON_OFF(void)
  */
 uint8_t xLCD_Get_Length(void)
 {
-	uint8_t temp;
-	switch(CURSOR_Y_POSITION)
-	{
-		/*! If the cursor is on the top line */
-		case 0:
-			/*!give total available characters(top and bottom line)*/
-			
-			temp = 48 - CURSOR_X_POSITION;
-			if (temp < 24)
-				return 24;
-			else
-				return temp;
-			break;
-			
-		/*! If the cursor is on the bottom line */
-		case 1:
-			/*! Give remaining characters available. */
-			temp = 24 - CURSOR_X_POSITION; 
-			if (temp > 0)
-				return temp;
-			else
-				return 0;
-			break;
-	}
+	return = 24 - CURSOR_X_POSITION; //returns number of characters left in the line
 }
 
 /*****************************************************************************/

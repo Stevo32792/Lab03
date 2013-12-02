@@ -164,7 +164,7 @@ uint8_t OnOffStatus = 0;
 #define LCD_CURSOR_BLINK_INSTRUCTION	LCD_D0
 	
 /*! Defines the writing settings for the LCD */
-#define configTEXT_WRAP		0
+#define configTEXT_WRAP		1
 
 //#define BITMODE4
 #define BITMODE8

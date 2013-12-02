@@ -121,7 +121,7 @@ Header file for Free\-R\-T\-O\-S L\-C\-D implementation.
 \hypertarget{_lib___l_c_d_8h_af6b3e3bf782c055cc89a4857e2e6856a}{\#define {\bfseries L\-C\-D\-\_\-\-C\-U\-R\-S\-O\-R\-\_\-\-B\-L\-I\-N\-K\-\_\-\-I\-N\-S\-T\-R\-U\-C\-T\-I\-O\-N}~\hyperlink{_lib___l_c_d_8h_ab1956831e022c90f2b658a8a840ef09e}{L\-C\-D\-\_\-\-D0}}\label{_lib___l_c_d_8h_af6b3e3bf782c055cc89a4857e2e6856a}
 
 \item 
-\#define \hyperlink{_lib___l_c_d_8h_a618e47154e11ffa61ec432f32512095d}{config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P}~0
+\#define \hyperlink{_lib___l_c_d_8h_a618e47154e11ffa61ec432f32512095d}{config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P}~1
 \item 
 \hypertarget{_lib___l_c_d_8h_a131ff94684a3d52692d68ac5c0ebcd18}{\#define {\bfseries B\-I\-T\-M\-O\-D\-E8}}\label{_lib___l_c_d_8h_a131ff94684a3d52692d68ac5c0ebcd18}
 
@@ -219,7 +219,7 @@ Definition at line 161 of file Lib\-\_\-\-L\-C\-D.\-h.
 
 \hypertarget{_lib___l_c_d_8h_a618e47154e11ffa61ec432f32512095d}{\index{Lib\-\_\-\-L\-C\-D.\-h@{Lib\-\_\-\-L\-C\-D.\-h}!config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P@{config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P}}
 \index{config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P@{config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P}!Lib_LCD.h@{Lib\-\_\-\-L\-C\-D.\-h}}
-\subsubsection[{config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P~0}}\label{_lib___l_c_d_8h_a618e47154e11ffa61ec432f32512095d}
+\subsubsection[{config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define config\-T\-E\-X\-T\-\_\-\-W\-R\-A\-P~1}}\label{_lib___l_c_d_8h_a618e47154e11ffa61ec432f32512095d}
 Defines the writing settings for the L\-C\-D 
 
 Definition at line 167 of file Lib\-\_\-\-L\-C\-D.\-h.
@@ -415,16 +415,19 @@ nothing
 \end{DoxyReturn}
 Modification History\-:
 
-11/17/2013 -\/ Original Function 11/24/2013 -\/ Added code to function Call write command to send 0x01 command (clear) to the controller 
+11/17/2013 -\/ Original Function 11/24/2013 -\/ Added code to function Call write command to send 0x01 command (clear) to the controller
 
-Definition at line 339 of file Lib\-\_\-\-L\-C\-D.\-c.
+Delay 1.\-53 ms to allow clear to finish 
+
+Definition at line 353 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-340 \{
-342     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 << 
+354 \{
+356     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 << 
       \hyperlink{_lib___l_c_d_8h_afa5174779d21b19ea27b5e5f666c3703}{LCD\_CLEAR\_INSTRUCTION});
-343 \}
+358     \_delay\_us(1530);
+359 \}
 \end{DoxyCode}
 
 
@@ -469,15 +472,15 @@ Call function to write string of 24 spaces to clear the bottom row
 
 Call function to set cursor for bottom row's home position 
 
-Definition at line 397 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 413 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-398 \{
-400     \hyperlink{_lib___l_c_d_8c_ae689772c0ccc0f690d05790f3a8cd89e}{vLCD\_HOME\_BOTTOM\_LINE}();
-402     \hyperlink{_lib___l_c_d_8c_a4c4dec8455090f9fa00b2c5d1fbc2543}{vLCD\_WRITE\_STRING}(\textcolor{stringliteral}{"                        "});
-404     \hyperlink{_lib___l_c_d_8c_ae689772c0ccc0f690d05790f3a8cd89e}{vLCD\_HOME\_BOTTOM\_LINE}();
-405 \}
+414 \{
+416     \hyperlink{_lib___l_c_d_8c_ae689772c0ccc0f690d05790f3a8cd89e}{vLCD\_HOME\_BOTTOM\_LINE}();
+418     \hyperlink{_lib___l_c_d_8c_a4c4dec8455090f9fa00b2c5d1fbc2543}{vLCD\_WRITE\_STRING}(\textcolor{stringliteral}{"                        "});
+420     \hyperlink{_lib___l_c_d_8c_ae689772c0ccc0f690d05790f3a8cd89e}{vLCD\_HOME\_BOTTOM\_LINE}();
+421 \}
 \end{DoxyCode}
 
 
@@ -522,15 +525,15 @@ Call function to write string of 24 spaces to clear the top row
 
 Call function to set cursor for top row's home position 
 
-Definition at line 366 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 382 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-367 \{
-369     \hyperlink{_lib___l_c_d_8c_a4427826e170410fece5aa9ff81f13d67}{vLCD\_HOME\_TOP\_LINE}();
-371     \hyperlink{_lib___l_c_d_8c_a4c4dec8455090f9fa00b2c5d1fbc2543}{vLCD\_WRITE\_STRING}(\textcolor{stringliteral}{"                        "});
-373     \hyperlink{_lib___l_c_d_8c_a4427826e170410fece5aa9ff81f13d67}{vLCD\_HOME\_TOP\_LINE}();
-374 \}
+383 \{
+385     \hyperlink{_lib___l_c_d_8c_a4427826e170410fece5aa9ff81f13d67}{vLCD\_HOME\_TOP\_LINE}();
+387     \hyperlink{_lib___l_c_d_8c_a4c4dec8455090f9fa00b2c5d1fbc2543}{vLCD\_WRITE\_STRING}(\textcolor{stringliteral}{"                        "});
+389     \hyperlink{_lib___l_c_d_8c_a4427826e170410fece5aa9ff81f13d67}{vLCD\_HOME\_TOP\_LINE}();
+390 \}
 \end{DoxyCode}
 
 
@@ -553,42 +556,45 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{_lib___l_c_d_8h_a1c8e4b3ff3b5366283a227f3efa1b76e}
 Function To go directly to a set of X,Y coordinates on the L\-C\-D 
 
-Definition at line 531 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 526 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-532 \{
-533     \textcolor{comment}{//save the current position}
-534     \textcolor{keyword}{register} uint8\_t DDRAMAddr;
-535     
-536     \textcolor{comment}{// For each line o the LCD}
-537     \textcolor{keywordflow}{switch}(y)
-538     \{
-539         \textcolor{keywordflow}{case} 0: 
-540             \textcolor{comment}{//for the top line, set the DDRAM address }
-541             \textcolor{comment}{//move a certain number of characters to the right}
-542             DDRAMAddr = LCD\_LINE0\_DDRAMADDR + x;
-543         \textcolor{keywordflow}{break};
-544         
-545         \textcolor{keywordflow}{case} 1: 
-546             \textcolor{comment}{//for the bottom line, set the DDRAM address }
-547             \textcolor{comment}{//move a certain number of characters to the right}
-548             DDRAMAddr = LCD\_LINE1\_DDRAMADDR + x;
-549         \textcolor{keywordflow}{break};
-550         
-551         \textcolor{keywordflow}{default}: 
-552             \textcolor{comment}{//default to the top left of the LCD if nothing is specified}
-553             DDRAMAddr = LCD\_LINE0\_DDRAMADDR+x;
-554     \}
+527 \{
+528     \textcolor{comment}{//save the current position}
+529     \textcolor{keyword}{register} uint8\_t DDRAMAddr;
+530     
+531     \textcolor{comment}{// For each line o the LCD}
+532     \textcolor{keywordflow}{switch}(y)
+533     \{
+534         \textcolor{keywordflow}{case} 0: 
+535             \textcolor{comment}{//for the top line, set the DDRAM address }
+536             \textcolor{comment}{//move a certain number of characters to the right}
+537             DDRAMAddr = LCD\_LINE0\_DDRAMADDR + x;
+538         \textcolor{keywordflow}{break};
+539         
+540         \textcolor{keywordflow}{case} 1: 
+541             \textcolor{comment}{//for the bottom line, set the DDRAM address }
+542             \textcolor{comment}{//move a certain number of characters to the right}
+543             DDRAMAddr = LCD\_LINE1\_DDRAMADDR + x;
+544         \textcolor{keywordflow}{break};
+545         
+546         \textcolor{keywordflow}{default}: 
+547             \textcolor{comment}{//default to the top left of the LCD if nothing is specified}
+548             DDRAMAddr = LCD\_LINE0\_DDRAMADDR+x;
+549     \}
+550     
+551     \textcolor{comment}{//save current cursor position X}
+552     \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION} = x;
+553     \textcolor{comment}{//save current cursor position Y}
+554     \hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION} = y;
 555     
-556     \textcolor{comment}{//save current cursor position X}
-557     \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION} = x;
-558     \textcolor{comment}{//save current cursor position Y}
-559     \hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION} = y;
-560     
-561     \textcolor{comment}{// send a command to set the data address}
-562     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 <<LCD\_DDRAM | DDRAMAddr);
-563 \}
+556     \textcolor{comment}{// send a command to set the data address}
+557     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 <<LCD\_DDRAM | DDRAMAddr);
+558     
+559     \textcolor{comment}{// Delay greater than 39us to allow LCD to complete operation}
+560     \_delay\_us(50);
+561 \}
 \end{DoxyCode}
 
 
@@ -642,14 +648,17 @@ Modification History\-:
 
 11/15/2013 -\/ Original Function 
 
-Definition at line 615 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 616 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-616 \{
-617     \textcolor{comment}{//move the cursor to the bottom left position on the LCD}
-618     \hyperlink{_lib___l_c_d_8c_a3d78bee51edcb0ebe6cf4936147bb207}{vLCD\_GO\_TO\_POSITION}(0,1);
-619 \}
+617 \{
+618     \textcolor{comment}{//move the cursor to the bottom left position on the LCD}
+619     \hyperlink{_lib___l_c_d_8c_a3d78bee51edcb0ebe6cf4936147bb207}{vLCD\_GO\_TO\_POSITION}(0,1);
+620     
+621     \textcolor{comment}{// Delay greater than 39us to allow LCD to complete operation}
+622     \_delay\_us(50);
+623 \}
 \end{DoxyCode}
 
 
@@ -703,14 +712,17 @@ Modification History\-:
 
 11/15/2013 -\/ Original Function 
 
-Definition at line 587 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 585 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-588 \{
-589     \textcolor{comment}{//move cursor to the top left position of the LCD}
-590     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 << \hyperlink{_lib___l_c_d_8h_a207e17a2f807f034c0fc055010928a16}{LCD\_HOME\_TOP\_LINE});
-591 \}
+586 \{
+587     \textcolor{comment}{//move cursor to the top left position of the LCD}
+588     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, 1 << \hyperlink{_lib___l_c_d_8h_a207e17a2f807f034c0fc055010928a16}{LCD\_HOME\_TOP\_LINE});
+589     
+590     \textcolor{comment}{// Delay greater than 1.53ms to allow LCD to complete operation}
+591     \_delay\_us(1530);
+592 \}
 \end{DoxyCode}
 
 
@@ -762,115 +774,122 @@ Modification History\-:
 
 11/17/2013 -\/ Original Function Initialize the Data Bit port for initially low output
 
-Initialize the Control Bit port for initially low output 
+Initialize the Control Bit port for initially low output
 
-Definition at line 47 of file Lib\-\_\-\-L\-C\-D.\-c.
+Set cursor position to zero 
+
+Definition at line 48 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-48 \{
-49     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} Instructions = 0x00;
-50     
-52     \hyperlink{_lib___l_c_d_8h_a8a47e7956b4dd0e990db51cd70d9eac8}{LDDR} = 0xFF;
-53     \hyperlink{_lib___l_c_d_8h_a88979bbbc6cd7d8c557867826d755c1b}{LDP} =  0x00;
-54     
-56     \hyperlink{_lib___l_c_d_8h_ab726239c0afab48dcbb8fd77a7eda438}{LCDR} = 0xFF;
-57     \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} =  0x00; 
-58     
-59 \textcolor{preprocessor}{    #ifdef BITMODE4}
-60 \textcolor{preprocessor}{}
-61         \_delay\_ms(35);
-62         
-63         \textcolor{comment}{/***************************************************************************/}
-72         Instructions = (1<<\hyperlink{_lib___l_c_d_8h_a5b91fe480c768d4f246f3890207bfbfc}{LCD\_D5});
-73         
-74         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
-75         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
-76         
-77         Instructions = (TWO\_LINE\_MODE<<\hyperlink{_lib___l_c_d_8h_abd65075e01c7413419581aedee5bcc24}{LCD\_D7})|(DISPLAY\_ON<<\hyperlink{_lib___l_c_d_8h_a72e105fcda5fd1c07b5f391379a439d4}{LCD\_D6});
+49 \{
+50     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} Instructions = 0x00;
+51     
+53     \hyperlink{_lib___l_c_d_8h_a8a47e7956b4dd0e990db51cd70d9eac8}{LDDR} = 0xFF;
+54     \hyperlink{_lib___l_c_d_8h_a88979bbbc6cd7d8c557867826d755c1b}{LDP} =  0x00;
+55     
+57     \hyperlink{_lib___l_c_d_8h_ab726239c0afab48dcbb8fd77a7eda438}{LCDR} = 0xFF;
+58     \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} =  0x00; 
+59     
+60     
+61 \textcolor{preprocessor}{    #ifdef BITMODE4}
+62 \textcolor{preprocessor}{}
+63         \_delay\_ms(35);
+64         
+65         \textcolor{comment}{/***************************************************************************/}
+74         Instructions = (1<<\hyperlink{_lib___l_c_d_8h_a5b91fe480c768d4f246f3890207bfbfc}{LCD\_D5});
+75         
+76         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+77         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
 78         
-79         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+79         Instructions = (TWO\_LINE\_MODE<<\hyperlink{_lib___l_c_d_8h_abd65075e01c7413419581aedee5bcc24}{LCD\_D7})|(DISPLAY\_ON<<\hyperlink{_lib___l_c_d_8h_a72e105fcda5fd1c07b5f391379a439d4}{LCD\_D6});
 80         
-82         \_delay\_us(50);
-83         
-84         \textcolor{comment}{/***************************************************************************/}
-94         Instructions = 0x00;
-95         
-96         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+81         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+82         
+84         \_delay\_us(50);
+85         
+86         \textcolor{comment}{/***************************************************************************/}
+96         Instructions = 0x00;
 97         
-98         Instructions = (1 << \hyperlink{_lib___l_c_d_8h_abd65075e01c7413419581aedee5bcc24}{LCD\_D7}) | 
-99               (DISPLAY\_ON << \hyperlink{_lib___l_c_d_8h_a72e105fcda5fd1c07b5f391379a439d4}{LCD\_D6}) | 
-100                (CURSOR\_ON << \hyperlink{_lib___l_c_d_8h_a5b91fe480c768d4f246f3890207bfbfc}{LCD\_D5}) | 
-101          (CURSOR\_BLINK\_ON << \hyperlink{_lib___l_c_d_8h_ade7e247311032a474711416da480ed8b}{LCD\_D4}));
-102          
-103          \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+98         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+99         
+100         Instructions = (1 << \hyperlink{_lib___l_c_d_8h_abd65075e01c7413419581aedee5bcc24}{LCD\_D7}) | 
+101               (DISPLAY\_ON << \hyperlink{_lib___l_c_d_8h_a72e105fcda5fd1c07b5f391379a439d4}{LCD\_D6}) | 
+102                (CURSOR\_ON << \hyperlink{_lib___l_c_d_8h_a5b91fe480c768d4f246f3890207bfbfc}{LCD\_D5}) | 
+103          (CURSOR\_BLINK\_ON << \hyperlink{_lib___l_c_d_8h_ade7e247311032a474711416da480ed8b}{LCD\_D4});
 104          
-106         \_delay\_us(50);
-107         
-108         \textcolor{comment}{/***************************************************************************/}
-112         Instructions = 0x00;
-113         
-114         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+105          \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+106          
+108         \_delay\_us(50);
+109         
+110         \textcolor{comment}{/***************************************************************************/}
+114         Instructions = 0x00;
 115         
-118         Instructions = (1<<\hyperlink{_lib___l_c_d_8h_ade7e247311032a474711416da480ed8b}{LCD\_D4});
-119         
-120         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+116         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+117         
+120         Instructions = (1<<\hyperlink{_lib___l_c_d_8h_ade7e247311032a474711416da480ed8b}{LCD\_D4});
 121         
-123         \_delay\_us(1600);
-124         
-125         \textcolor{comment}{/***************************************************************************/}
-129         Instructions = 0x00;
-130         
-131         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+122         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+123         
+125         \_delay\_us(1600);
+126         
+127         \textcolor{comment}{/***************************************************************************/}
+131         Instructions = 0x00;
 132         
-138         Instructions =  (1 << \hyperlink{_lib___l_c_d_8h_a72e105fcda5fd1c07b5f391379a439d4}{LCD\_D6}) | 
-139            (INCREMENT\_MODE << \hyperlink{_lib___l_c_d_8h_a5b91fe480c768d4f246f3890207bfbfc}{LCD\_D5}) | 
-140         (ENTIRE\_SHIFT\_MODE << \hyperlink{_lib___l_c_d_8h_ade7e247311032a474711416da480ed8b}{LCD\_D4});
-141         
-142         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
-143 \textcolor{preprocessor}{    #endif;}
-144 \textcolor{preprocessor}{}    
-145 \textcolor{preprocessor}{    #ifdef BITMODE8}
+133         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+134         
+140         Instructions =  (1 << \hyperlink{_lib___l_c_d_8h_a72e105fcda5fd1c07b5f391379a439d4}{LCD\_D6}) | 
+141            (INCREMENT\_MODE << \hyperlink{_lib___l_c_d_8h_a5b91fe480c768d4f246f3890207bfbfc}{LCD\_D5}) | 
+142         (ENTIRE\_SHIFT\_MODE << \hyperlink{_lib___l_c_d_8h_ade7e247311032a474711416da480ed8b}{LCD\_D4});
+143         
+144         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+145 \textcolor{preprocessor}{    #endif;}
 146 \textcolor{preprocessor}{}    
-148         \_delay\_ms(35);
-149         
-150         \textcolor{comment}{/***************************************************************************/}
-159         Instructions = (1 << \hyperlink{_lib___l_c_d_8h_a5b91fe480c768d4f246f3890207bfbfc}{LCD\_D5}) |
-160                        (1 << \hyperlink{_lib___l_c_d_8h_ade7e247311032a474711416da480ed8b}{LCD\_D4}) | 
-161            (TWO\_LINE\_MODE << \hyperlink{_lib___l_c_d_8h_a3d23f1f20ad1f0fb190f4a10334f4bf1}{LCD\_D3}) | 
-162               (DISPLAY\_ON << \hyperlink{_lib___l_c_d_8h_aa97ea257a9007a9055e5f77e1b3336e5}{LCD\_D2}); 
-163               
-164         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
-165                 
-167         \_delay\_us(50);
-168         
-169         \textcolor{comment}{/***************************************************************************/}
-179         Instructions = (1 << \hyperlink{_lib___l_c_d_8h_a3d23f1f20ad1f0fb190f4a10334f4bf1}{LCD\_D3}) | 
-180               (DISPLAY\_ON << \hyperlink{_lib___l_c_d_8h_aa97ea257a9007a9055e5f77e1b3336e5}{LCD\_D2}) | 
-181                (CURSOR\_ON << \hyperlink{_lib___l_c_d_8h_ac6b74016e58d58b47230a2d0aaf959d8}{LCD\_D1}) | 
-182          (CURSOR\_BLINK\_ON << 0);
-183          
-184          \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+147 \textcolor{preprocessor}{    #ifdef BITMODE8}
+148 \textcolor{preprocessor}{}    
+150         \_delay\_ms(35);
+151         
+152         \textcolor{comment}{/***************************************************************************/}
+161         Instructions = (1 << \hyperlink{_lib___l_c_d_8h_a5b91fe480c768d4f246f3890207bfbfc}{LCD\_D5}) |
+162                        (1 << \hyperlink{_lib___l_c_d_8h_ade7e247311032a474711416da480ed8b}{LCD\_D4}) | 
+163            (TWO\_LINE\_MODE << \hyperlink{_lib___l_c_d_8h_a3d23f1f20ad1f0fb190f4a10334f4bf1}{LCD\_D3}) | 
+164               (DISPLAY\_ON << \hyperlink{_lib___l_c_d_8h_aa97ea257a9007a9055e5f77e1b3336e5}{LCD\_D2}); 
+165               
+166         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+167                 
+169         \_delay\_us(50);
+170         
+171         \textcolor{comment}{/***************************************************************************/}
+181         Instructions = (1 << \hyperlink{_lib___l_c_d_8h_a3d23f1f20ad1f0fb190f4a10334f4bf1}{LCD\_D3}) | 
+182               (DISPLAY\_ON << \hyperlink{_lib___l_c_d_8h_aa97ea257a9007a9055e5f77e1b3336e5}{LCD\_D2}) | 
+183                (CURSOR\_ON << \hyperlink{_lib___l_c_d_8h_ac6b74016e58d58b47230a2d0aaf959d8}{LCD\_D1}) | 
+184          (CURSOR\_BLINK\_ON << 0);
 185          
-187         \_delay\_us(50);
-188         
-189         \textcolor{comment}{/***************************************************************************/}
-195         Instructions = 0x01;
-196         
-197         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
-198         
-200         \_delay\_us(1600);
-201         
-202         \textcolor{comment}{/***************************************************************************/}
-211         Instructions =  (1 << \hyperlink{_lib___l_c_d_8h_aa97ea257a9007a9055e5f77e1b3336e5}{LCD\_D2}) | 
-212            (INCREMENT\_MODE << \hyperlink{_lib___l_c_d_8h_ac6b74016e58d58b47230a2d0aaf959d8}{LCD\_D1}) | 
-213         (ENTIRE\_SHIFT\_MODE << 0);
-214         
-215         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
-216         
-217 \textcolor{preprocessor}{    #endif;}
-218 \textcolor{preprocessor}{}    
-219 \}
+186          \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+187          
+188          \hyperlink{_lib___l_c_d_8h_a7306354fa1b76399437e38800816c915}{OnOffStatus} = 0;
+189          
+191         \_delay\_us(50);
+192         
+193         \textcolor{comment}{/***************************************************************************/}
+199         Instructions = 0x01;
+200         
+201         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+202         
+204         \_delay\_us(1600);
+205         
+206         \textcolor{comment}{/***************************************************************************/}
+215         Instructions =  (1 << \hyperlink{_lib___l_c_d_8h_aa97ea257a9007a9055e5f77e1b3336e5}{LCD\_D2}) | 
+216            (INCREMENT\_MODE << \hyperlink{_lib___l_c_d_8h_ac6b74016e58d58b47230a2d0aaf959d8}{LCD\_D1}) | 
+217         (ENTIRE\_SHIFT\_MODE << 0);
+218         
+219         \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(INSTR\_WR, Instructions);
+220         
+221 \textcolor{preprocessor}{    #endif;}
+222 \textcolor{preprocessor}{}    
+224     \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION} = 0;
+225     \hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION} = 0;
+226 \}
 \end{DoxyCode}
 
 
@@ -913,23 +932,26 @@ Modification History\-:
 
 Toggle the On\-Off\-Status tracker variable
 
-Toggle L\-C\-D 
+Toggle L\-C\-D
 
-Definition at line 428 of file Lib\-\_\-\-L\-C\-D.\-c.
+Delay greater than 39us to allow L\-C\-D to complete operation 
+
+Definition at line 444 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-429 \{
-431     uint8\_t LCD\_Command = 
-432         (1 << \hyperlink{_lib___l_c_d_8h_aa57a26c661193bfb41377f080d15b4d6}{LCD\_ON\_OFF\_INSTRCUTION}) |
-433         (\hyperlink{_lib___l_c_d_8h_a7306354fa1b76399437e38800816c915}{OnOffStatus} << LCD\_ON\_INSTRUCTION) |
-434         (\hyperlink{_lib___l_c_d_8h_aaa9d50b1d874e351a1bafc33f7f8b22d}{configCURSOR\_SHOW} << LCD\_CURSOR\_SHOW\_INSTRUCTION) |
-435         (configCURSOR\_BLINK << LCD\_CURSOR\_BLINK\_INSTRUCTION);
-436     
-438     \hyperlink{_lib___l_c_d_8h_a7306354fa1b76399437e38800816c915}{OnOffStatus} = \hyperlink{_lib___l_c_d_8h_a7306354fa1b76399437e38800816c915}{OnOffStatus} ^ 0x01;
-439     
-441     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(0, LCD\_Command);
-442 \}
+445 \{
+447     uint8\_t LCD\_Command = 
+448         (1 << \hyperlink{_lib___l_c_d_8h_aa57a26c661193bfb41377f080d15b4d6}{LCD\_ON\_OFF\_INSTRCUTION}) |
+449         (\hyperlink{_lib___l_c_d_8h_a7306354fa1b76399437e38800816c915}{OnOffStatus} << LCD\_ON\_INSTRUCTION) |
+450         (\hyperlink{_lib___l_c_d_8h_aaa9d50b1d874e351a1bafc33f7f8b22d}{configCURSOR\_SHOW} << LCD\_CURSOR\_SHOW\_INSTRUCTION) |
+451         (configCURSOR\_BLINK << LCD\_CURSOR\_BLINK\_INSTRUCTION);
+452     
+454     \hyperlink{_lib___l_c_d_8h_a7306354fa1b76399437e38800816c915}{OnOffStatus} = \hyperlink{_lib___l_c_d_8h_a7306354fa1b76399437e38800816c915}{OnOffStatus} ^ 0x01;
+455     
+457     \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(0, LCD\_Command);
+459     \_delay\_us(50);
+460 \}
 \end{DoxyCode}
 
 
@@ -968,26 +990,34 @@ nothing
 \end{DoxyReturn}
 Modification History\-:
 
-11/17/2013 -\/ Original Function 11/23/2013 -\/ Addec Code If text wrap is enabled 
+11/17/2013 -\/ Original Function 11/23/2013 -\/ Added Code 11/30/2013 -\/ Limit bottom line to prevent rollover If text wrap is enabled
 
-Definition at line 292 of file Lib\-\_\-\-L\-C\-D.\-c.
+Limit the length of the bottom line to prevent rollover 
+
+Definition at line 300 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-293 \{   
-294     \textcolor{keywordflow}{while}(*str\_ptr != \textcolor{charliteral}{'\(\backslash\)0'})     \textcolor{comment}{//move through the string until the end is reached}
-295     \{
-297 \textcolor{preprocessor}{        #ifdef configTEXT\_WRAP}
-298 \textcolor{preprocessor}{}\textcolor{preprocessor}{            #if configTEXT\_WRAP == 1}
-299 \textcolor{preprocessor}{}        
-301                 \textcolor{keywordflow}{if}( \hyperlink{_lib___l_c_d_8c_a1d0d7788aeded6a84e4149f2351beaf8}{xLCD\_Get\_Length}()== 24)
-302                     \hyperlink{_lib___l_c_d_8c_ae689772c0ccc0f690d05790f3a8cd89e}{vLCD\_HOME\_BOTTOM\_LINE}(); \textcolor{comment}{//Continue on to the bottom line}
-303         
-304 \textcolor{preprocessor}{            #endif}
-305 \textcolor{preprocessor}{}\textcolor{preprocessor}{        #endif}
-306 \textcolor{preprocessor}{}        \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(DATA\_WR, *str\_ptr++);
-307     \}   
-308 \}
+301 \{   
+302     uint8\_t character;
+303     \textcolor{keywordflow}{while}(*str\_ptr != \textcolor{charliteral}{'\(\backslash\)0'})     \textcolor{comment}{//move through the string until the end is reached}
+304     \{
+306 \textcolor{preprocessor}{        #ifdef configTEXT\_WRAP}
+307 \textcolor{preprocessor}{}\textcolor{preprocessor}{            #if configTEXT\_WRAP == 1}
+308 \textcolor{preprocessor}{}        
+310                 \textcolor{keywordflow}{if}( \hyperlink{_lib___l_c_d_8c_a1d0d7788aeded6a84e4149f2351beaf8}{xLCD\_Get\_Length}()<= 0 && \hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION} == 0)
+311                     \hyperlink{_lib___l_c_d_8c_ae689772c0ccc0f690d05790f3a8cd89e}{vLCD\_HOME\_BOTTOM\_LINE}(); \textcolor{comment}{//Continue on to the bottom line}
+312         
+313 \textcolor{preprocessor}{            #endif}
+314 \textcolor{preprocessor}{}\textcolor{preprocessor}{        #endif}
+315 \textcolor{preprocessor}{}
+316         \textcolor{keywordflow}{if} (!(\hyperlink{_lib___l_c_d_8c_a1d0d7788aeded6a84e4149f2351beaf8}{xLCD\_Get\_Length}() < 0 && \hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION} == 1))
+317         \{
+318             character = *str\_ptr++; \textcolor{comment}{//increment pointer}
+319             \hyperlink{_lib___l_c_d_8c_a03a66d0dc99ddbf838e4699cb1f0c568}{vWRITE\_COMMAND\_TO\_LCD}(DATA\_WR, character); \textcolor{comment}{//print character}
+320         \}           
+321     \}   
+322 \}
 \end{DoxyCode}
 
 
@@ -1019,40 +1049,38 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{char}]{data}
 \end{DoxyParamCaption}
 )}}\label{_lib___l_c_d_8h_a03a66d0dc99ddbf838e4699cb1f0c568}
-Function to Write commands to an L\-C\-D Set D\-B7 pin to read
+Function to Write commands to an L\-C\-D Enable display for use
 
-Wait for Busy flag to clear
+Delay for more than 39us
 
-Set L\-C\-D\-\_\-\-D7 pin for output
+Increment Cursor Position
 
-Enable display for use
+Delay for more than 39us 
 
-Wait for Busy flag to clear 
-
-Definition at line 244 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 252 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-245 \{
-247     \hyperlink{_lib___l_c_d_8h_a8a47e7956b4dd0e990db51cd70d9eac8}{LDDR} = \hyperlink{_lib___l_c_d_8h_a8a47e7956b4dd0e990db51cd70d9eac8}{LDDR} & 0x7F;
-248     
-250     \textcolor{keywordflow}{while}(\hyperlink{_lib___l_c_d_8h_a88979bbbc6cd7d8c557867826d755c1b}{LDP} & 0x80);
-251     
-253     \hyperlink{_lib___l_c_d_8h_a8a47e7956b4dd0e990db51cd70d9eac8}{LDDR} = \hyperlink{_lib___l_c_d_8h_a8a47e7956b4dd0e990db51cd70d9eac8}{LDDR} | (1 << \hyperlink{_lib___l_c_d_8h_abd65075e01c7413419581aedee5bcc24}{LCD\_D7});
-254     
-255     \textcolor{keywordflow}{if}(RS == DATA\_WR) \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} = 1 << \hyperlink{_lib___l_c_d_8h_a4781e073871c6f27f89b9463ad3a4ed1}{LCD\_RS};   \textcolor{comment}{/*Set RS high to write data*/} 
-256     \textcolor{keywordflow}{else} \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} = 0x00; \textcolor{comment}{/*Set RS low to write instructions*/}
-257     
-259     \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} = \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} | 1<<\hyperlink{_lib___l_c_d_8h_a6ec15b1e813d1f56d2eb644a127e5d49}{LCD\_E}; 
-260     
-261     \textcolor{comment}{/* Write Data*/}
-262     \hyperlink{_lib___l_c_d_8h_a88979bbbc6cd7d8c557867826d755c1b}{LDP} = data;
-263     
-265     \textcolor{keywordflow}{while}(\hyperlink{_lib___l_c_d_8h_a88979bbbc6cd7d8c557867826d755c1b}{LDP} & 0x80); 
-266     
-267     \textcolor{comment}{/*Set Read/Write low*/}
-268     \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} = \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} & 1<<\hyperlink{_lib___l_c_d_8h_a4781e073871c6f27f89b9463ad3a4ed1}{LCD\_RS};
-269 \}
+253 \{       
+254     \textcolor{keywordflow}{if}(RS == DATA\_WR) \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} = 1 << \hyperlink{_lib___l_c_d_8h_a4781e073871c6f27f89b9463ad3a4ed1}{LCD\_RS};   \textcolor{comment}{/*Set RS high to write data*/} 
+255     \textcolor{keywordflow}{else} \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} = 0x00; \textcolor{comment}{/*Set RS low to write instructions*/}
+256     
+258     \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} = \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} | 1<<\hyperlink{_lib___l_c_d_8h_a6ec15b1e813d1f56d2eb644a127e5d49}{LCD\_E}; 
+259     
+261     \_delay\_us(50);
+262     
+263     \textcolor{comment}{/* Write Data*/}
+264     \hyperlink{_lib___l_c_d_8h_a88979bbbc6cd7d8c557867826d755c1b}{LDP} = data;
+265     \textcolor{keywordflow}{if} (RS = DATA\_WR)
+266     \{
+268         \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION}++;
+269     \}       
+270     
+271     \textcolor{comment}{/*Set Read/Write low*/}
+272     \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} = \hyperlink{_lib___l_c_d_8h_a488115f911c9dcfb0bad83c6b0912965}{LCP} & 1<<\hyperlink{_lib___l_c_d_8h_a4781e073871c6f27f89b9463ad3a4ed1}{LCD\_RS};
+273     
+275     \_delay\_us(50);
+276 \}
 \end{DoxyCode}
 
 
@@ -1072,39 +1100,15 @@ Here is the caller graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )}}\label{_lib___l_c_d_8h_ada06c4c8d18a84974788d6a726439302}
-Function to track remaining characters on the L\-C\-D If the cursor is on the top line
+Function to track remaining characters on the L\-C\-D 
 
-give total available characters(top and bottom line)
-
-If the cursor is on the bottom line
-
-Give remaining characters available. 
-
-Definition at line 472 of file Lib\-\_\-\-L\-C\-D.\-c.
+Definition at line 490 of file Lib\-\_\-\-L\-C\-D.\-c.
 
 
 \begin{DoxyCode}
-473 \{
-474     uint8\_t temp;
-475     \textcolor{keywordflow}{switch}(\hyperlink{_lib___l_c_d_8h_aa8060b8676b9666d5b1357bb896a7cfa}{CURSOR\_Y\_POSITION})
-476     \{
-478         \textcolor{keywordflow}{case} 0:
-481             temp = 48 - \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION};
-482             \textcolor{keywordflow}{if} (temp < 24)
-483                 \textcolor{keywordflow}{return} 24;
-484             \textcolor{keywordflow}{else}
-485                 \textcolor{keywordflow}{return} temp;
-486             \textcolor{keywordflow}{break};
-487             
-489         \textcolor{keywordflow}{case} 1:
-491             temp = 24 - \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION}; 
-492             \textcolor{keywordflow}{if} (temp > 0)
-493                 \textcolor{keywordflow}{return} temp;
-494             \textcolor{keywordflow}{else}
-495                 \textcolor{keywordflow}{return} 0;
-496             \textcolor{keywordflow}{break};
-497     \}
-498 \}
+491 \{
+492     \textcolor{keywordflow}{return}  (24 - \hyperlink{_lib___l_c_d_8h_af3836e0e465249949a42c1711a29b026}{CURSOR\_X\_POSITION}); \textcolor{comment}{//returns number of characters left in the line}
+493 \}
 \end{DoxyCode}
 
 

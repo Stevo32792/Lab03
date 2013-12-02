@@ -100,7 +100,7 @@ void vLCD_INITIALIZATION(void)
 		Instructions = (1 << LCD_D7) | 
 			  (DISPLAY_ON << LCD_D6) | 
 			   (CURSOR_ON << LCD_D5) | 
-		 (CURSOR_BLINK_ON << LCD_D4));
+		 (CURSOR_BLINK_ON << LCD_D4);
 		 
 		 vWRITE_COMMAND_TO_LCD(INSTR_WR, Instructions);
 		 
@@ -222,6 +222,7 @@ void vLCD_INITIALIZATION(void)
 	
 	/*! Set cursor position to zero*/
 	CURSOR_X_POSITION = 0;
+	CURSOR_Y_POSITION = 0;
 }
 
 /*****************************************************************************/
@@ -312,7 +313,7 @@ void vLCD_WRITE_STRING(char *str_ptr)
 			#endif
 		#endif
 		/*! Limit the length of the bottom line to prevent rollover */
-		if (!(xLCD_Get_Length() <= 0 && CURSOR_Y_POSITION == 1))
+		if (!(xLCD_Get_Length() < 0 && CURSOR_Y_POSITION == 1))
 		{
 			character = *str_ptr++; //increment pointer
 			vWRITE_COMMAND_TO_LCD(DATA_WR, character); //print character
@@ -488,7 +489,7 @@ void vLCD_ON_OFF(void)
  */
 uint8_t xLCD_Get_Length(void)
 {
-	return = 24 - CURSOR_X_POSITION; //returns number of characters left in the line
+	return  (24 - CURSOR_X_POSITION); //returns number of characters left in the line
 }
 
 /*****************************************************************************/

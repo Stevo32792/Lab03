@@ -222,10 +222,10 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DISPLAY_ON</b>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a5ae6b05b3e1559c97f0d1b2daaaa0ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf764a93ccecfc79fed90d889d820508"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf764a93ccecfc79fed90d889d820508"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CURSOR_ON</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CURSOR_ON</b>&#160;&#160;&#160;<a class="el" href="_lib___l_c_d_8h.html#aaa9d50b1d874e351a1bafc33f7f8b22d">configCURSOR_SHOW</a></td></tr>
 <tr class="separator:abf764a93ccecfc79fed90d889d820508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e81e72799789533269d3dd23ffb5fc0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e81e72799789533269d3dd23ffb5fc0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CURSOR_BLINK_ON</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CURSOR_BLINK_ON</b>&#160;&#160;&#160;configCURSOR_BLINK</td></tr>
 <tr class="separator:a7e81e72799789533269d3dd23ffb5fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1934eac011c9d87d3b84c9aa82a43ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1934eac011c9d87d3b84c9aa82a43ce"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>INCREMENT_MODE</b>&#160;&#160;&#160;1</td></tr>
@@ -685,13 +685,13 @@ Variables</h2></td></tr>
 <p>Call write command to send 0x01 command (clear) to the controller</p>
 <p>Delay 1.53 ms to allow clear to finish </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00353">353</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;{</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, 1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#afa5174779d21b19ea27b5e5f666c3703">LCD_CLEAR_INSTRUCTION</a>);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    _delay_us(1530);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00263">263</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;{</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, 1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#afa5174779d21b19ea27b5e5f666c3703">LCD_CLEAR_INSTRUCTION</a>);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    _delay_us(1530);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;}</div>
 <div class="ttc" id="_lib___l_c_d_8h_html_afa5174779d21b19ea27b5e5f666c3703"><div class="ttname"><a href="_lib___l_c_d_8h.html#afa5174779d21b19ea27b5e5f666c3703">LCD_CLEAR_INSTRUCTION</a></div><div class="ttdeci">#define LCD_CLEAR_INSTRUCTION</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00154">Lib_LCD.h:154</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00252">Lib_LCD.c:252</a></div></div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00151">Lib_LCD.c:151</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -730,14 +730,14 @@ Here is the call graph for this function:</div>
 <p>Call function to write string of 24 spaces to clear the bottom row</p>
 <p>Call function to set cursor for bottom row's home position </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00413">413</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;{</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a>();</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a4c4dec8455090f9fa00b2c5d1fbc2543">vLCD_WRITE_STRING</a>(<span class="stringliteral">&quot;                        &quot;</span>);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a>();</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;}</div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a4c4dec8455090f9fa00b2c5d1fbc2543"><div class="ttname"><a href="_lib___l_c_d_8c.html#a4c4dec8455090f9fa00b2c5d1fbc2543">vLCD_WRITE_STRING</a></div><div class="ttdeci">void vLCD_WRITE_STRING(char *str_ptr)</div><div class="ttdoc">Function to write strings to the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00300">Lib_LCD.c:300</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8c_html_ae689772c0ccc0f690d05790f3a8cd89e"><div class="ttname"><a href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a></div><div class="ttdeci">void vLCD_HOME_BOTTOM_LINE(void)</div><div class="ttdoc">Function to return to home position on the bottom line of the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00616">Lib_LCD.c:616</a></div></div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00323">323</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;{</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a>();</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a4c4dec8455090f9fa00b2c5d1fbc2543">vLCD_WRITE_STRING</a>(<span class="stringliteral">&quot;                        &quot;</span>);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a>();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a4c4dec8455090f9fa00b2c5d1fbc2543"><div class="ttname"><a href="_lib___l_c_d_8c.html#a4c4dec8455090f9fa00b2c5d1fbc2543">vLCD_WRITE_STRING</a></div><div class="ttdeci">void vLCD_WRITE_STRING(char *str_ptr)</div><div class="ttdoc">Function to write strings to the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00210">Lib_LCD.c:210</a></div></div>
+<div class="ttc" id="_lib___l_c_d_8c_html_ae689772c0ccc0f690d05790f3a8cd89e"><div class="ttname"><a href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a></div><div class="ttdeci">void vLCD_HOME_BOTTOM_LINE(void)</div><div class="ttdoc">Function to return to home position on the bottom line of the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00526">Lib_LCD.c:526</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -776,14 +776,14 @@ Here is the call graph for this function:</div>
 <p>Call function to write string of 24 spaces to clear the top row</p>
 <p>Call function to set cursor for top row's home position </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00382">382</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;{</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a4427826e170410fece5aa9ff81f13d67">vLCD_HOME_TOP_LINE</a>();</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a4c4dec8455090f9fa00b2c5d1fbc2543">vLCD_WRITE_STRING</a>(<span class="stringliteral">&quot;                        &quot;</span>);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a4427826e170410fece5aa9ff81f13d67">vLCD_HOME_TOP_LINE</a>();</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a4c4dec8455090f9fa00b2c5d1fbc2543"><div class="ttname"><a href="_lib___l_c_d_8c.html#a4c4dec8455090f9fa00b2c5d1fbc2543">vLCD_WRITE_STRING</a></div><div class="ttdeci">void vLCD_WRITE_STRING(char *str_ptr)</div><div class="ttdoc">Function to write strings to the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00300">Lib_LCD.c:300</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a4427826e170410fece5aa9ff81f13d67"><div class="ttname"><a href="_lib___l_c_d_8c.html#a4427826e170410fece5aa9ff81f13d67">vLCD_HOME_TOP_LINE</a></div><div class="ttdeci">void vLCD_HOME_TOP_LINE(void)</div><div class="ttdoc">Function to return to home position on the top line of the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00585">Lib_LCD.c:585</a></div></div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00292">292</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a4427826e170410fece5aa9ff81f13d67">vLCD_HOME_TOP_LINE</a>();</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a4c4dec8455090f9fa00b2c5d1fbc2543">vLCD_WRITE_STRING</a>(<span class="stringliteral">&quot;                        &quot;</span>);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a4427826e170410fece5aa9ff81f13d67">vLCD_HOME_TOP_LINE</a>();</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a4c4dec8455090f9fa00b2c5d1fbc2543"><div class="ttname"><a href="_lib___l_c_d_8c.html#a4c4dec8455090f9fa00b2c5d1fbc2543">vLCD_WRITE_STRING</a></div><div class="ttdeci">void vLCD_WRITE_STRING(char *str_ptr)</div><div class="ttdoc">Function to write strings to the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00210">Lib_LCD.c:210</a></div></div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a4427826e170410fece5aa9ff81f13d67"><div class="ttname"><a href="_lib___l_c_d_8c.html#a4427826e170410fece5aa9ff81f13d67">vLCD_HOME_TOP_LINE</a></div><div class="ttdeci">void vLCD_HOME_TOP_LINE(void)</div><div class="ttdoc">Function to return to home position on the top line of the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00495">Lib_LCD.c:495</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -821,44 +821,44 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Function To go directly to a set of X,Y coordinates on the LCD </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00526">526</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;{</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="comment">//save the current position</span></div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keyword">register</span> uint8_t DDRAMAddr;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    </div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="comment">// For each line o the LCD</span></div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="keywordflow">switch</span>(y)</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    {</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <span class="keywordflow">case</span> 0: </div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            <span class="comment">//for the top line, set the DDRAM address </span></div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            <span class="comment">//move a certain number of characters to the right</span></div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            DDRAMAddr = LCD_LINE0_DDRAMADDR + x;</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        </div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="keywordflow">case</span> 1: </div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            <span class="comment">//for the bottom line, set the DDRAM address </span></div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            <span class="comment">//move a certain number of characters to the right</span></div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            DDRAMAddr = LCD_LINE1_DDRAMADDR + x;</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        </div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        <span class="keywordflow">default</span>: </div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            <span class="comment">//default to the top left of the LCD if nothing is specified</span></div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;            DDRAMAddr = LCD_LINE0_DDRAMADDR+x;</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    }</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    </div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <span class="comment">//save current cursor position X</span></div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a> = x;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="comment">//save current cursor position Y</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a> = y;</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    </div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <span class="comment">// send a command to set the data address</span></div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, 1 &lt;&lt;LCD_DDRAM | DDRAMAddr);</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    </div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="comment">// Delay greater than 39us to allow LCD to complete operation</span></div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    _delay_us(50);</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00436">436</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;{</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="comment">//save the current position</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keyword">register</span> uint8_t DDRAMAddr;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="comment">// For each line o the LCD</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordflow">switch</span>(y)</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    {</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="keywordflow">case</span> 0: </div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            <span class="comment">//for the top line, set the DDRAM address </span></div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            <span class="comment">//move a certain number of characters to the right</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            DDRAMAddr = LCD_LINE0_DDRAMADDR + x;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        </div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        <span class="keywordflow">case</span> 1: </div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            <span class="comment">//for the bottom line, set the DDRAM address </span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="comment">//move a certain number of characters to the right</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            DDRAMAddr = LCD_LINE1_DDRAMADDR + x;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        <span class="keywordflow">default</span>: </div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            <span class="comment">//default to the top left of the LCD if nothing is specified</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            DDRAMAddr = LCD_LINE0_DDRAMADDR+x;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    }</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="comment">//save current cursor position X</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a> = x;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="comment">//save current cursor position Y</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a> = y;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="comment">// send a command to set the data address</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, 1 &lt;&lt;LCD_DDRAM | DDRAMAddr);</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    </div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="comment">// Delay greater than 39us to allow LCD to complete operation</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    _delay_us(50);</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;}</div>
 <div class="ttc" id="_lib___l_c_d_8h_html_aa8060b8676b9666d5b1357bb896a7cfa"><div class="ttname"><a href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a></div><div class="ttdeci">uint8_t CURSOR_Y_POSITION</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00045">Lib_LCD.h:45</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00252">Lib_LCD.c:252</a></div></div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00151">Lib_LCD.c:151</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_af3836e0e465249949a42c1711a29b026"><div class="ttname"><a href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a></div><div class="ttdeci">uint8_t CURSOR_X_POSITION</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00043">Lib_LCD.h:43</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
@@ -905,15 +905,15 @@ Here is the caller graph for this function:</div>
 <p>Modification History:</p>
 <p>11/15/2013 - Original Function </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00616">616</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;{</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="comment">//move the cursor to the bottom left position on the LCD</span></div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a3d78bee51edcb0ebe6cf4936147bb207">vLCD_GO_TO_POSITION</a>(0,1);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    </div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// Delay greater than 39us to allow LCD to complete operation</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    _delay_us(50);</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;}</div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a3d78bee51edcb0ebe6cf4936147bb207"><div class="ttname"><a href="_lib___l_c_d_8c.html#a3d78bee51edcb0ebe6cf4936147bb207">vLCD_GO_TO_POSITION</a></div><div class="ttdeci">void vLCD_GO_TO_POSITION(uint8_t x, uint8_t y)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00526">Lib_LCD.c:526</a></div></div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00526">526</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;{</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="comment">//move the cursor to the bottom left position on the LCD</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a3d78bee51edcb0ebe6cf4936147bb207">vLCD_GO_TO_POSITION</a>(0,1);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    </div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="comment">// Delay greater than 39us to allow LCD to complete operation</span></div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    _delay_us(50);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;}</div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a3d78bee51edcb0ebe6cf4936147bb207"><div class="ttname"><a href="_lib___l_c_d_8c.html#a3d78bee51edcb0ebe6cf4936147bb207">vLCD_GO_TO_POSITION</a></div><div class="ttdeci">void vLCD_GO_TO_POSITION(uint8_t x, uint8_t y)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00436">Lib_LCD.c:436</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -959,16 +959,16 @@ Here is the caller graph for this function:</div>
 <p>Modification History:</p>
 <p>11/15/2013 - Original Function </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00585">585</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;{</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="comment">//move cursor to the top left position of the LCD</span></div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, 1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a207e17a2f807f034c0fc055010928a16">LCD_HOME_TOP_LINE</a>);</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    </div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="comment">// Delay greater than 1.53ms to allow LCD to complete operation</span></div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    _delay_us(1530);</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00495">495</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;{</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="comment">//move cursor to the top left position of the LCD</span></div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, 1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a207e17a2f807f034c0fc055010928a16">LCD_HOME_TOP_LINE</a>);</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    </div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <span class="comment">// Delay greater than 1.53ms to allow LCD to complete operation</span></div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    _delay_us(1530);</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;}</div>
 <div class="ttc" id="_lib___l_c_d_8h_html_a207e17a2f807f034c0fc055010928a16"><div class="ttname"><a href="_lib___l_c_d_8h.html#a207e17a2f807f034c0fc055010928a16">LCD_HOME_TOP_LINE</a></div><div class="ttdeci">#define LCD_HOME_TOP_LINE</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00123">Lib_LCD.h:123</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00252">Lib_LCD.c:252</a></div></div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00151">Lib_LCD.c:151</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1012,134 +1012,73 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>nothing</dd></dl>
 <p>Modification History:</p>
 <p>11/17/2013 - Original Function </p>
-<p>Initialize the Data Bit port for initially low output</p>
-<p>Initialize the Control Bit port for initially low output</p>
+<p>Delay more than 30ms after powering up </p>
+<pre class="fragment">###Function set###
+</pre><p> /*</p>
+<p>Set LCD in one or two line mode Set LCD Font type 5x11 dots or 5x8 dots</p>
+<p>Delay more than 39us </p>
+<pre class="fragment">###Display ON/OFF Control###
+</pre><p> /*</p>
+<p>Set LCD to have display on Set LCD Cursor on or off Set Cursor to blink or not</p>
+<p>Delay more than 39us </p>
+<pre class="fragment">###Display Clear###
+</pre><p> /*</p>
+<p>Write Commands to clear the screen</p>
+<p>Delay more than 1.53ms </p>
+<pre class="fragment">###Entry Mode set###
+</pre><p> /*</p>
+<p>Set LCD in Increment or decrement mode Set LCD to entire shift mode if desired</p>
 <p>Set cursor position to zero </p>
 
 <p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00048">48</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Instructions = 0x00;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a8a47e7956b4dd0e990db51cd70d9eac8">LDDR</a> = 0xFF;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a88979bbbc6cd7d8c557867826d755c1b">LDP</a> =  0x00;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#ab726239c0afab48dcbb8fd77a7eda438">LCDR</a> = 0xFF;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> =  0x00;    </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">    #ifdef BITMODE4</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        _delay_ms(35);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        Instructions = (1&lt;&lt;<a class="code" href="_lib___l_c_d_8h.html#a5b91fe480c768d4f246f3890207bfbfc">LCD_D5</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        Instructions = (TWO_LINE_MODE&lt;&lt;<a class="code" href="_lib___l_c_d_8h.html#abd65075e01c7413419581aedee5bcc24">LCD_D7</a>)|(DISPLAY_ON&lt;&lt;<a class="code" href="_lib___l_c_d_8h.html#a72e105fcda5fd1c07b5f391379a439d4">LCD_D6</a>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        _delay_us(50);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        Instructions = 0x00;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        Instructions = (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#abd65075e01c7413419581aedee5bcc24">LCD_D7</a>) | </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;              (DISPLAY_ON &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a72e105fcda5fd1c07b5f391379a439d4">LCD_D6</a>) | </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;               (CURSOR_ON &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a5b91fe480c768d4f246f3890207bfbfc">LCD_D5</a>) | </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;         (CURSOR_BLINK_ON &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#ade7e247311032a474711416da480ed8b">LCD_D4</a>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;         </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;         <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;         </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        _delay_us(50);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        Instructions = 0x00;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        Instructions = (1&lt;&lt;<a class="code" href="_lib___l_c_d_8h.html#ade7e247311032a474711416da480ed8b">LCD_D4</a>);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        _delay_us(1600);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        Instructions = 0x00;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        Instructions =  (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a72e105fcda5fd1c07b5f391379a439d4">LCD_D6</a>) | </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;           (INCREMENT_MODE &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a5b91fe480c768d4f246f3890207bfbfc">LCD_D5</a>) | </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        (ENTIRE_SHIFT_MODE &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#ade7e247311032a474711416da480ed8b">LCD_D4</a>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">    #endif;</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor"></span>    </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">    #ifdef BITMODE8</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor"></span>    </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        _delay_ms(35);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        Instructions = (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a5b91fe480c768d4f246f3890207bfbfc">LCD_D5</a>) |</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                       (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#ade7e247311032a474711416da480ed8b">LCD_D4</a>) | </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;           (TWO_LINE_MODE &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a3d23f1f20ad1f0fb190f4a10334f4bf1">LCD_D3</a>) | </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;              (DISPLAY_ON &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#aa97ea257a9007a9055e5f77e1b3336e5">LCD_D2</a>);   </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;              </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        _delay_us(50);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        Instructions = (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a3d23f1f20ad1f0fb190f4a10334f4bf1">LCD_D3</a>) | </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;              (DISPLAY_ON &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#aa97ea257a9007a9055e5f77e1b3336e5">LCD_D2</a>) | </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;               (CURSOR_ON &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#ac6b74016e58d58b47230a2d0aaf959d8">LCD_D1</a>) | </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;         (CURSOR_BLINK_ON &lt;&lt; 0);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;         </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;         <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;         </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;         <a class="code" href="_lib___l_c_d_8h.html#a7306354fa1b76399437e38800816c915">OnOffStatus</a> = 0;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;         </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        _delay_us(50);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        Instructions = 0x01;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        _delay_us(1600);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        Instructions =  (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#aa97ea257a9007a9055e5f77e1b3336e5">LCD_D2</a>) | </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;           (INCREMENT_MODE &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#ac6b74016e58d58b47230a2d0aaf959d8">LCD_D1</a>) | </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        (ENTIRE_SHIFT_MODE &lt;&lt; 0);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">    #endif;</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor"></span>    </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a> = 0;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a> = 0;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
-<div class="ttc" id="_lib___l_c_d_8h_html_abd65075e01c7413419581aedee5bcc24"><div class="ttname"><a href="_lib___l_c_d_8h.html#abd65075e01c7413419581aedee5bcc24">LCD_D7</a></div><div class="ttdeci">#define LCD_D7</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00096">Lib_LCD.h:96</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8h_html_aa8060b8676b9666d5b1357bb896a7cfa"><div class="ttname"><a href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a></div><div class="ttdeci">uint8_t CURSOR_Y_POSITION</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00045">Lib_LCD.h:45</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8h_html_a488115f911c9dcfb0bad83c6b0912965"><div class="ttname"><a href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a></div><div class="ttdeci">#define LCP</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00100">Lib_LCD.h:100</a></div></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        _delay_ms(35);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        Instructions = (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a5b91fe480c768d4f246f3890207bfbfc">LCD_D5</a>) |</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                       (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#ade7e247311032a474711416da480ed8b">LCD_D4</a>) | </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;           (TWO_LINE_MODE &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a3d23f1f20ad1f0fb190f4a10334f4bf1">LCD_D3</a>) | </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;              (DISPLAY_ON &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#aa97ea257a9007a9055e5f77e1b3336e5">LCD_D2</a>);   </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;              </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        _delay_us(50);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        Instructions = (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a3d23f1f20ad1f0fb190f4a10334f4bf1">LCD_D3</a>) | </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;              (DISPLAY_ON &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#aa97ea257a9007a9055e5f77e1b3336e5">LCD_D2</a>) | </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;               (CURSOR_ON &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#ac6b74016e58d58b47230a2d0aaf959d8">LCD_D1</a>) | </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;         (CURSOR_BLINK_ON &lt;&lt; 0);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;         <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        _delay_us(50);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        Instructions = 0x01;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        _delay_us(1600);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">/***************************************************************************/</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        Instructions =  (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#aa97ea257a9007a9055e5f77e1b3336e5">LCD_D2</a>) | </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;           (INCREMENT_MODE &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#ac6b74016e58d58b47230a2d0aaf959d8">LCD_D1</a>) | </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        (ENTIRE_SHIFT_MODE &lt;&lt; 0);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(INSTR_WR, Instructions);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a> = 0;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 <div class="ttc" id="_lib___l_c_d_8h_html_ade7e247311032a474711416da480ed8b"><div class="ttname"><a href="_lib___l_c_d_8h.html#ade7e247311032a474711416da480ed8b">LCD_D4</a></div><div class="ttdeci">#define LCD_D4</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00090">Lib_LCD.h:90</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8h_html_a88979bbbc6cd7d8c557867826d755c1b"><div class="ttname"><a href="_lib___l_c_d_8h.html#a88979bbbc6cd7d8c557867826d755c1b">LDP</a></div><div class="ttdeci">#define LDP</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00098">Lib_LCD.h:98</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_ac6b74016e58d58b47230a2d0aaf959d8"><div class="ttname"><a href="_lib___l_c_d_8h.html#ac6b74016e58d58b47230a2d0aaf959d8">LCD_D1</a></div><div class="ttdeci">#define LCD_D1</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00084">Lib_LCD.h:84</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_a3d23f1f20ad1f0fb190f4a10334f4bf1"><div class="ttname"><a href="_lib___l_c_d_8h.html#a3d23f1f20ad1f0fb190f4a10334f4bf1">LCD_D3</a></div><div class="ttdeci">#define LCD_D3</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00088">Lib_LCD.h:88</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8h_html_a8a47e7956b4dd0e990db51cd70d9eac8"><div class="ttname"><a href="_lib___l_c_d_8h.html#a8a47e7956b4dd0e990db51cd70d9eac8">LDDR</a></div><div class="ttdeci">#define LDDR</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00102">Lib_LCD.h:102</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_aa97ea257a9007a9055e5f77e1b3336e5"><div class="ttname"><a href="_lib___l_c_d_8h.html#aa97ea257a9007a9055e5f77e1b3336e5">LCD_D2</a></div><div class="ttdeci">#define LCD_D2</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00086">Lib_LCD.h:86</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_a5b91fe480c768d4f246f3890207bfbfc"><div class="ttname"><a href="_lib___l_c_d_8h.html#a5b91fe480c768d4f246f3890207bfbfc">LCD_D5</a></div><div class="ttdeci">#define LCD_D5</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00092">Lib_LCD.h:92</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00252">Lib_LCD.c:252</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8h_html_a72e105fcda5fd1c07b5f391379a439d4"><div class="ttname"><a href="_lib___l_c_d_8h.html#a72e105fcda5fd1c07b5f391379a439d4">LCD_D6</a></div><div class="ttdeci">#define LCD_D6</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00094">Lib_LCD.h:94</a></div></div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00151">Lib_LCD.c:151</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_af3836e0e465249949a42c1711a29b026"><div class="ttname"><a href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a></div><div class="ttdeci">uint8_t CURSOR_X_POSITION</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00043">Lib_LCD.h:43</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8h_html_a7306354fa1b76399437e38800816c915"><div class="ttname"><a href="_lib___l_c_d_8h.html#a7306354fa1b76399437e38800816c915">OnOffStatus</a></div><div class="ttdeci">uint8_t OnOffStatus</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00058">Lib_LCD.h:58</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8h_html_ab726239c0afab48dcbb8fd77a7eda438"><div class="ttname"><a href="_lib___l_c_d_8h.html#ab726239c0afab48dcbb8fd77a7eda438">LCDR</a></div><div class="ttdeci">#define LCDR</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00104">Lib_LCD.h:104</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1179,22 +1118,22 @@ Here is the call graph for this function:</div>
 <p>Toggle LCD</p>
 <p>Delay greater than 39us to allow LCD to complete operation </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00444">444</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;{</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    uint8_t LCD_Command = </div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#aa57a26c661193bfb41377f080d15b4d6">LCD_ON_OFF_INSTRCUTION</a>) |</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        (<a class="code" href="_lib___l_c_d_8h.html#a7306354fa1b76399437e38800816c915">OnOffStatus</a> &lt;&lt; LCD_ON_INSTRUCTION) |</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        (<a class="code" href="_lib___l_c_d_8h.html#aaa9d50b1d874e351a1bafc33f7f8b22d">configCURSOR_SHOW</a> &lt;&lt; LCD_CURSOR_SHOW_INSTRUCTION) |</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        (configCURSOR_BLINK &lt;&lt; LCD_CURSOR_BLINK_INSTRUCTION);</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a7306354fa1b76399437e38800816c915">OnOffStatus</a> = <a class="code" href="_lib___l_c_d_8h.html#a7306354fa1b76399437e38800816c915">OnOffStatus</a> ^ 0x01;</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    </div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(0, LCD_Command);</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    _delay_us(50);</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00354">354</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    uint8_t LCD_Command = </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        (1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#aa57a26c661193bfb41377f080d15b4d6">LCD_ON_OFF_INSTRCUTION</a>) |</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        (<a class="code" href="_lib___l_c_d_8h.html#a7306354fa1b76399437e38800816c915">OnOffStatus</a> &lt;&lt; LCD_ON_INSTRUCTION) |</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        (<a class="code" href="_lib___l_c_d_8h.html#aaa9d50b1d874e351a1bafc33f7f8b22d">configCURSOR_SHOW</a> &lt;&lt; LCD_CURSOR_SHOW_INSTRUCTION) |</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        (configCURSOR_BLINK &lt;&lt; LCD_CURSOR_BLINK_INSTRUCTION);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a7306354fa1b76399437e38800816c915">OnOffStatus</a> = <a class="code" href="_lib___l_c_d_8h.html#a7306354fa1b76399437e38800816c915">OnOffStatus</a> ^ 0x01;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(0, LCD_Command);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    _delay_us(50);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;}</div>
 <div class="ttc" id="_lib___l_c_d_8h_html_aaa9d50b1d874e351a1bafc33f7f8b22d"><div class="ttname"><a href="_lib___l_c_d_8h.html#aaa9d50b1d874e351a1bafc33f7f8b22d">configCURSOR_SHOW</a></div><div class="ttdeci">#define configCURSOR_SHOW</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00161">Lib_LCD.h:161</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_aa57a26c661193bfb41377f080d15b4d6"><div class="ttname"><a href="_lib___l_c_d_8h.html#aa57a26c661193bfb41377f080d15b4d6">LCD_ON_OFF_INSTRCUTION</a></div><div class="ttdeci">#define LCD_ON_OFF_INSTRCUTION</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00157">Lib_LCD.h:157</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00252">Lib_LCD.c:252</a></div></div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00151">Lib_LCD.c:151</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_a7306354fa1b76399437e38800816c915"><div class="ttname"><a href="_lib___l_c_d_8h.html#a7306354fa1b76399437e38800816c915">OnOffStatus</a></div><div class="ttdeci">uint8_t OnOffStatus</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00058">Lib_LCD.h:58</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
@@ -1231,33 +1170,34 @@ Here is the call graph for this function:</div>
 <p>Modification History:</p>
 <p>11/17/2013 - Original Function 11/23/2013 - Added Code 11/30/2013 - Limit bottom line to prevent rollover </p>
 <p>If text wrap is enabled</p>
+<p>If the LCD is at the end of the top line</p>
 <p>Limit the length of the bottom line to prevent rollover </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00300">300</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{   </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    uint8_t character;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">while</span>(*str_ptr != <span class="charliteral">&#39;\0&#39;</span>)     <span class="comment">//move through the string until the end is reached</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">        #ifdef configTEXT_WRAP</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor"></span><span class="preprocessor">            #if configTEXT_WRAP == 1</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor"></span>        </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                <span class="keywordflow">if</span>( <a class="code" href="_lib___l_c_d_8c.html#a1d0d7788aeded6a84e4149f2351beaf8">xLCD_Get_Length</a>()&lt;= 0 &amp;&amp; <a class="code" href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a> == 0)</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                    <a class="code" href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a>(); <span class="comment">//Continue on to the bottom line</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">            #endif</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #endif</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="_lib___l_c_d_8c.html#a1d0d7788aeded6a84e4149f2351beaf8">xLCD_Get_Length</a>() &lt; 0 &amp;&amp; <a class="code" href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a> == 1))</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            character = *str_ptr++; <span class="comment">//increment pointer</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(DATA_WR, character); <span class="comment">//print character</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        }           </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }   </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a1d0d7788aeded6a84e4149f2351beaf8"><div class="ttname"><a href="_lib___l_c_d_8c.html#a1d0d7788aeded6a84e4149f2351beaf8">xLCD_Get_Length</a></div><div class="ttdeci">uint8_t xLCD_Get_Length(void)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00490">Lib_LCD.c:490</a></div></div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00210">210</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{   </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    uint8_t character;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">while</span>(*str_ptr != <span class="charliteral">&#39;\0&#39;</span>)     <span class="comment">//move through the string until the end is reached</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">        #ifdef configTEXT_WRAP</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor"></span><span class="preprocessor">            #if configTEXT_WRAP == 1</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor"></span>        </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keywordflow">if</span>( <a class="code" href="_lib___l_c_d_8c.html#a1d0d7788aeded6a84e4149f2351beaf8">xLCD_Get_Length</a>() &lt;= 0 &amp;&amp; <a class="code" href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a> == 0)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    <a class="code" href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a>(); <span class="comment">//Continue on to the bottom line</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">            #endif</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">if</span> (!(<a class="code" href="_lib___l_c_d_8c.html#a1d0d7788aeded6a84e4149f2351beaf8">xLCD_Get_Length</a>() &lt; 0 &amp;&amp; <a class="code" href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a> == 1))</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            character = *str_ptr++; <span class="comment">//increment pointer</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <a class="code" href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a>(DATA_WR, character); <span class="comment">//print character</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }           </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }   </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a1d0d7788aeded6a84e4149f2351beaf8"><div class="ttname"><a href="_lib___l_c_d_8c.html#a1d0d7788aeded6a84e4149f2351beaf8">xLCD_Get_Length</a></div><div class="ttdeci">uint8_t xLCD_Get_Length(void)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00400">Lib_LCD.c:400</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_aa8060b8676b9666d5b1357bb896a7cfa"><div class="ttname"><a href="_lib___l_c_d_8h.html#aa8060b8676b9666d5b1357bb896a7cfa">CURSOR_Y_POSITION</a></div><div class="ttdeci">uint8_t CURSOR_Y_POSITION</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00045">Lib_LCD.h:45</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8c_html_ae689772c0ccc0f690d05790f3a8cd89e"><div class="ttname"><a href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a></div><div class="ttdeci">void vLCD_HOME_BOTTOM_LINE(void)</div><div class="ttdoc">Function to return to home position on the bottom line of the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00616">Lib_LCD.c:616</a></div></div>
-<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00252">Lib_LCD.c:252</a></div></div>
+<div class="ttc" id="_lib___l_c_d_8c_html_ae689772c0ccc0f690d05790f3a8cd89e"><div class="ttname"><a href="_lib___l_c_d_8c.html#ae689772c0ccc0f690d05790f3a8cd89e">vLCD_HOME_BOTTOM_LINE</a></div><div class="ttdeci">void vLCD_HOME_BOTTOM_LINE(void)</div><div class="ttdoc">Function to return to home position on the bottom line of the LCD. </div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00526">Lib_LCD.c:526</a></div></div>
+<div class="ttc" id="_lib___l_c_d_8c_html_a03a66d0dc99ddbf838e4699cb1f0c568"><div class="ttname"><a href="_lib___l_c_d_8c.html#a03a66d0dc99ddbf838e4699cb1f0c568">vWRITE_COMMAND_TO_LCD</a></div><div class="ttdeci">void vWRITE_COMMAND_TO_LCD(char RS, char data)</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8c_source.html#l00151">Lib_LCD.c:151</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1308,27 +1248,37 @@ Here is the caller graph for this function:</div>
 <p>Increment Cursor Position</p>
 <p>Delay for more than 39us </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00252">252</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{       </div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span>(RS == DATA_WR) <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> = 1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a>;    <span class="comment">/*Set RS high to write data*/</span> </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> = 0x00;    <span class="comment">/*Set RS low to write instructions*/</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> = <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> | 1&lt;&lt;<a class="code" href="_lib___l_c_d_8h.html#a6ec15b1e813d1f56d2eb644a127e5d49">LCD_E</a>; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    _delay_us(50);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">/* Write Data*/</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a88979bbbc6cd7d8c557867826d755c1b">LDP</a> = data;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">if</span> (RS = DATA_WR)</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a>++;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }       </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">/*Set Read/Write low*/</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> = <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> &amp; 1&lt;&lt;<a class="code" href="_lib___l_c_d_8h.html#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a>;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    _delay_us(50);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00151">151</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{       </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">if</span>(RS == DATA_WR) <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> = 1 &lt;&lt; <a class="code" href="_lib___l_c_d_8h.html#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a>;    <span class="comment">/*Set RS high to write data*/</span> </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> = 0x00;    <span class="comment">/*Set RS low to write instructions*/</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> = <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> | 1&lt;&lt;<a class="code" href="_lib___l_c_d_8h.html#a6ec15b1e813d1f56d2eb644a127e5d49">LCD_E</a>; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    _delay_us(50);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">/* Write Data*/</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">    #ifdef BITMODE4</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor"></span>        <a class="code" href="_lib___l_c_d_8h.html#a88979bbbc6cd7d8c557867826d755c1b">LDP</a> = data; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        data = (data &lt;&lt; 4);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="_lib___l_c_d_8h.html#a88979bbbc6cd7d8c557867826d755c1b">LDP</a> =  data; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">    #endif;</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">    #ifdef BITMODE8</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor"></span>        <a class="code" href="_lib___l_c_d_8h.html#a88979bbbc6cd7d8c557867826d755c1b">LDP</a> = data;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor"></span>    </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">if</span> (RS == DATA_WR)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a>++;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }       </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">/*Set Read/Write low*/</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> = <a class="code" href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a> &amp; 1&lt;&lt;<a class="code" href="_lib___l_c_d_8h.html#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a>; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    _delay_us(50);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
 <div class="ttc" id="_lib___l_c_d_8h_html_a6ec15b1e813d1f56d2eb644a127e5d49"><div class="ttname"><a href="_lib___l_c_d_8h.html#a6ec15b1e813d1f56d2eb644a127e5d49">LCD_E</a></div><div class="ttdeci">#define LCD_E</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00080">Lib_LCD.h:80</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_a488115f911c9dcfb0bad83c6b0912965"><div class="ttname"><a href="_lib___l_c_d_8h.html#a488115f911c9dcfb0bad83c6b0912965">LCP</a></div><div class="ttdeci">#define LCP</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00100">Lib_LCD.h:100</a></div></div>
 <div class="ttc" id="_lib___l_c_d_8h_html_a4781e073871c6f27f89b9463ad3a4ed1"><div class="ttname"><a href="_lib___l_c_d_8h.html#a4781e073871c6f27f89b9463ad3a4ed1">LCD_RS</a></div><div class="ttdeci">#define LCD_RS</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00076">Lib_LCD.h:76</a></div></div>
@@ -1360,10 +1310,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to track remaining characters on the LCD </p>
 
-<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00490">490</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;{</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="keywordflow">return</span>  (24 - <a class="code" href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a>); <span class="comment">//returns number of characters left in the line</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_lib___l_c_d_8c_source.html#l00400">400</a> of file <a class="el" href="_lib___l_c_d_8c_source.html">Lib_LCD.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;{</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordflow">return</span>  (24 - <a class="code" href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a>); <span class="comment">//returns number of characters left in the line</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;}</div>
 <div class="ttc" id="_lib___l_c_d_8h_html_af3836e0e465249949a42c1711a29b026"><div class="ttname"><a href="_lib___l_c_d_8h.html#af3836e0e465249949a42c1711a29b026">CURSOR_X_POSITION</a></div><div class="ttdeci">uint8_t CURSOR_X_POSITION</div><div class="ttdef"><b>Definition:</b> <a href="_lib___l_c_d_8h_source.html#l00043">Lib_LCD.h:43</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
@@ -1456,7 +1406,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 2 2013 15:39:57 for freeRTOS LCD Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 2 2013 18:54:27 for freeRTOS LCD Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

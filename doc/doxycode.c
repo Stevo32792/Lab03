@@ -66,9 +66,11 @@
 	pins 0-7 being port pins 0-7. The 3 command pins are plugged into a port,
 	with RS being pin 0, RW being pin 1, and E being pin 2. The ports default
 	to PORTK for the data pins and PORTJ for the command pins. These may be
-	changed via the defines LDP and LCP in the header file. The Data Definition
+	changed via the defines LDP (data) and LCP (command) in the header file. The Data Definition
 	Registers LDDR and LCDR should also being changed according to the assigned
 	ports.
+	
+	\image html "LCD_BOARD.jpg" "Figure 1 - Input Pins on LCD Board"
 	
 	\subsection wrap Text Wrapping
 	The "configTEXT_WRAP" setting is used to define if text wrapping should be
@@ -77,6 +79,8 @@
 	to 1.
 	
 	\subsection bitmode 4-bit/8-bit Mode
+	\warning 4-bit mode is non-operational! Enabling it may yield unexpected results!
+	
 	The BITMODE definition is used to define if the display is to be used
 	in 8-bit mode or 4-bit mode. A define of "BITMODE8" will set the display
 	to use 8-bit mode, where a define of "BITMODE4" will set the display to
@@ -100,6 +104,8 @@
 	to 1, the 5x11 dot format is used.
 	
 	\subsection Mode Increment and Shift Mode
+	\warning Shift mode is non-operational! Enabling it may yield unexpected results! 
+	
 	The configuration of the shift mode can be changed to either increment or
 	entire shift. Setting the define "INCREMENT_MODE" to 1 will set the display
 	to increment, where setting the define "ENTIRE_SHIFT_MODE" to 1 will set the
@@ -225,7 +231,6 @@
 	
 	\section command vWRITE_COMMAND_TO_LCD(RS,data)
 	<a href="vWRITE_COMMAND_TO_LCD_TESTPLAN.pdf"> Test Plans </a> <br>
-	<a href="vWRITE_COMMAND_TO_LCD_TESTPLAN_COMPLETE.pdf"> Test Plans Completed </a> <br>
 	<a href="vWRITE_COMMAND_TO_LCD_LOGIC.pdf"> Logic Test Plans </a>
 	
 	\section string vLCD_WRITE_STRING(string)
@@ -235,20 +240,20 @@
 	\section onoff vLCD_ON_OFF()
 	<a href="vLCD_ON_OFF_CURSOR_OFF_BLINK_TESTPLAN.pdf"> Cursor Off Blink Test Plans </a> <br>
 	<a href="vLCD_ON_OFF_CURSOR_OFF_BLINK_TESTPLAN_COMPLETE.pdf"> Cursor Off Blink Test Plans Completed </a> <br>
-	<a href="vLCD_ON_OFF_CURSOR_OFF_BLINK_LOGIC.pdf"> Cursor Off Blink Logic Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_OFF_BLINK_LOGIC.pdf"> Cursor Off Blink Logic Test Plans </a> <br><br>
 	<a href="vLCD_ON_OFF_CURSOR_OFF_SOLID_TESTPLAN.pdf"> Cursor Off Solid Test Plans </a> <br>
 	<a href="vLCD_ON_OFF_CURSOR_OFF_SOLID_TESTPLAN_COMPLETE.pdf"> Cursor Off Solid Test Plans Completed </a> <br>
-	<a href="vLCD_ON_OFF_CURSOR_OFF_SOLID_LOGIC.pdf"> Cursor Off Solid Logic Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_OFF_SOLID_LOGIC.pdf"> Cursor Off Solid Logic Test Plans </a> <br><br>
 	<a href="vLCD_ON_OFF_CURSOR_ON_BLINK_TESTPLAN.pdf"> Cursor On Blink Test Plans </a> <br>
 	<a href="vLCD_ON_OFF_CURSOR_ON_BLINK_TESTPLAN_COMPLETE.pdf"> Cursor On Blink Test Plans Completed </a> <br>
-	<a href="vLCD_ON_OFF_CURSOR_ON_BLINK_LOGIC.pdf"> Cursor On Blink Logic Test Plans </a> <br>
+	<a href="vLCD_ON_OFF_CURSOR_ON_BLINK_LOGIC.pdf"> Cursor On Blink Logic Test Plans </a> <br><br>
 	<a href="vLCD_ON_OFF_CURSOR_ON_SOLID_TESTPLAN.pdf"> Cursor On Solid Test Plans </a> <br>
 	<a href="vLCD_ON_OFF_CURSOR_ON_SOLID_TESTPLAN_COMPLETE.pdf"> Cursor On Solid Test Plans Completed </a> <br>
 	<a href="vLCD_ON_OFF_CURSOR_ON_SOLID_LOGIC.pdf"> Cursor On Solid Logic Test Plans </a>
 	
 	\section clear vLCD_CLEAR()
 	<a href="vLCD_CLEAR_TESTPLAN.pdf"> Test Plans </a> <br>
-	<a href="vLCD_CLEAR_TESTPLAN_COMPLETED.pdf"> Test Plans Completed </a> <br>
+	<a href="vLCD_CLEAR_TESTPLAN_CREATE.pdf"> Test Plans Completed </a> <br>
 	<a href="vLCD_CLEAR_LOGIC.pdf"> Logic Test Plans </a>
 	
 	\section clear_top vLCD_CLEAR_TOP()
@@ -280,4 +285,9 @@
 	<a href="vLCD_PRINT_STRING_TESTPLAN.pdf"> Test Plans </a> <br>
 	<a href="vLCD_PRINT_STRING_TESTPLAN_COMPLETE.pdf"> Test Plans Completed </a> <br>
 	<a href="vLCD_PRINT_STRING_LOGIC.pdf"> Logic Test Plans </a>
+*/
+
+/*!	\page datasheets Datasheets
+	<a href="LCD_KS0066U_CONTROLLER_DATASHEET.pdf"> KS0066U Datasheet (LCD Controller) </a> <br>
+	<a href="LCD_BOARD_DATASHEET.pdf"> Purdue University Multi-Interface LCD Board Datasheet </a>
 */

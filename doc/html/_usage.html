@@ -108,12 +108,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Defines</h1>
 <h2><a class="anchor" id="Wiring"></a>
 LCD Wiring</h2>
-<p>The LCD needs wired so that there are 8 data pins and 3 "command" pins. The 3 command pins are Register Select (RS), Read/Not Write (R/!W), and Enable (E). The 8 data pins are always plugged into their own port, with the data pins 0-7 being port pins 0-7. The 3 command pins are plugged into a port, with RS being pin 0, RW being pin 1, and E being pin 2. The ports default to PORTK for the data pins and PORTJ for the command pins. These may be changed via the defines LDP and LCP in the header file. The Data Definition Registers LDDR and LCDR should also being changed according to the assigned ports.</p>
-<h2><a class="anchor" id="wrap"></a>
+<p>The LCD needs wired so that there are 8 data pins and 3 "command" pins. The 3 command pins are Register Select (RS), Read/Not Write (R/!W), and Enable (E). The 8 data pins are always plugged into their own port, with the data pins 0-7 being port pins 0-7. The 3 command pins are plugged into a port, with RS being pin 0, RW being pin 1, and E being pin 2. The ports default to PORTK for the data pins and PORTJ for the command pins. These may be changed via the defines LDP (data) and LCP (command) in the header file. The Data Definition Registers LDDR and LCDR should also being changed according to the assigned ports.</p>
+<div class="image">
+<img src="LCD_BOARD.jpg" alt="LCD_BOARD.jpg"/>
+<div class="caption">
+Figure 1 - Input Pins on LCD Board</div></div>
+ <h2><a class="anchor" id="wrap"></a>
 Text Wrapping</h2>
 <p>The "configTEXT_WRAP" setting is used to define if text wrapping should be enabled when calling the "vLCD_WRITE_STRING" command. This automatically moves to the second line of the display when the first line is full when set to 1.</p>
 <h2><a class="anchor" id="bitmode"></a>
 4-bit/8-bit Mode</h2>
+<dl class="section warning"><dt>Warning</dt><dd>4-bit mode is non-operational! Enabling it may yield unexpected results!</dd></dl>
 <p>The BITMODE definition is used to define if the display is to be used in 8-bit mode or 4-bit mode. A define of "BITMODE8" will set the display to use 8-bit mode, where a define of "BITMODE4" will set the display to use 4-bit mode.</p>
 <h2><a class="anchor" id="Cursor"></a>
 Cursor Blink and Show</h2>
@@ -126,6 +131,7 @@ Font Size</h2>
 <p>Two font sizes exist for the display, both 5x11 dots and 5x8 dots. When "FONT_TYPE" is set to 0, the 5x8 dot format is used. When "FONT_TYPE" is set to 1, the 5x11 dot format is used.</p>
 <h2><a class="anchor" id="Mode"></a>
 Increment and Shift Mode</h2>
+<dl class="section warning"><dt>Warning</dt><dd>Shift mode is non-operational! Enabling it may yield unexpected results!</dd></dl>
 <p>The configuration of the shift mode can be changed to either increment or entire shift. Setting the define "INCREMENT_MODE" to 1 will set the display to increment, where setting the define "ENTIRE_SHIFT_MODE" to 1 will set the display to shift on data write.</p>
 <h1><a class="anchor" id="functions"></a>
 Functions</h1>
@@ -167,7 +173,7 @@ vLCD_HOME_BOTTOM_LINE()</h2>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 2 2013 15:39:58 for freeRTOS LCD Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 2 2013 18:54:27 for freeRTOS LCD Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

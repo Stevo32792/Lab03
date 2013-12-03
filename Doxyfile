@@ -1181,7 +1181,23 @@ HTML_EXTRA_FILES       = doc/design/Flowcharts/vLCD_CLEAR_BOTTOM_FLOWCHART.PNG \
                          "doc/design/Test Plans/Logic Test Plans PDF/vLCD_INITIALIZATION_8bit_LOGIC.pdf" \
                          "doc/design/Test Plans/Logic Test Plans PDF/vWRITE_COMMAND_TO_LCD_LOGIC.pdf" \
                          "doc/design/Test Plans/Function Test Plans PDF/vLCD_INITIALIZATION_TESTPLAN.pdf" \
-                         "doc/design/Test Plans/Function Test Plans PDF/vWRITE_COMMAND_TO_LCD_TESTPLAN.pdf"
+                         "doc/design/Test Plans/Function Test Plans PDF/vWRITE_COMMAND_TO_LCD_TESTPLAN.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_CLEAR_BOTTOM_TESTPLAN_CREATE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_CLEAR_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_CLEAR_TOP_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_GO_TO_POSITION_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_HOME_BOTTOM_LINE_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_HOME_TOP_LINE_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_INITIALIZATION_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_ON_OFF_CURSOR_OFF_BLINK_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_ON_OFF_CURSOR_OFF_SOLID_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_ON_OFF_CURSOR_ON_BLINK_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_ON_OFF_CURSOR_ON_SOLID_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/vLCD_PRINT_STRING_TESTPLAN_COMPLETE.pdf" \
+                         "doc/design/Test Plans Completed/xGET_LENGTH_TESTPLAN_COMPLETE.pdf" \
+                         doc/design/LCD_BOARD.jpg \
+                         doc/datasheets/LCD_BOARD_DATASHEET.pdf \
+                         doc/datasheets/LCD_KS0066U_CONTROLLER_DATASHEET.pdf
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the stylesheet and background images according to
